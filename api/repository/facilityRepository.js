@@ -1,6 +1,6 @@
 const Repository = require("./repository");
 
-const path = "./data/users.json";
+const path = "./data/facilities.json";
 
 const repository = new Repository(path);
 
@@ -24,19 +24,9 @@ function remove(id) {
     return repository.remove(id);
 }
 
-function getByUsername(username) {
-    return getAll().find((user) => user.username == username);
-}
-
-function getByEmail(email) {
-    return getAll().find((user) => user.email == email);
-}
-
 module.exports = {
     getAll,
-    getByEmail,
     getById,
-    getByUsername,
     remove,
     save,
     update,

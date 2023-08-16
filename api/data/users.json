@@ -9,27 +9,5 @@
     "role": "customer",
     "points": 0,
     "id": 1
-  },
-  {
-    "username": "asd",
-    "password": "123456",
-    "firstName": "asd",
-    "lastName": "asd",
-    "gender": "male",
-    "dateOfBirth": "1222-12-22",
-    "role": "customer",
-    "points": 0,
-    "id": 2
-  },
-  {
-    "username": "ww",
-    "password": "123123",
-    "firstName": "ww",
-    "lastName": "ww",
-    "gender": "male",
-    "dateOfBirth": "0111-11-11",
-    "role": "customer",
-    "points": 0,
-    "id": 3
   }
 ]

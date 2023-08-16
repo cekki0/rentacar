@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Facility 1",
+    "vehicles": [
+      {
+        "brand": "Toyota",
+        "model": "Camry",
+        "price": 100,
+        "vehicleType": "Sedan",
+        "gearShift": "Automatic",
+        "fuelType": "Gasoline",
+        "consumption": "7.5 L/100km",
+        "numDoors": 4,
+        "numMaxPeople": 5,
+        "description": "Comfortable and spacious sedan.",
+        "picture": "",
+        "rentStatus": "available"
+      }
+    ],
+    "workingTime": 16,
+    "openStatus": "opened",
+    "location": "Location 1",
+    "logo": "",
+    "rating": 4.5
+  }
+]

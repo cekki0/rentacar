@@ -106,83 +106,7 @@ import Facility from "./Facility.vue";
 export default {
   data() {
     return {
-      facilities: [
-        {
-          index: 1,
-          name: "Facility 1",
-          vehicles: [
-            {
-              brand: "Toyota",
-              model: "Camry",
-              price: 100,
-              vehicleType: "Sedan",
-              gearShift: "Automatic",
-              fuelType: "Gasoline",
-              consumption: "7.5 L/100km",
-              numDoors: 4,
-              numMaxPeople: 5,
-              description: "Comfortable and spacious sedan.",
-              picture: "",
-              rentStatus: "available",
-            },
-          ],
-          workingTime: 16,
-          openStatus: "opened",
-          location: "Location 1",
-          logo: "",
-          rating: 4.5,
-        },
-        {
-          index: 2,
-          name: "Facility 2",
-          vehicles: [
-            {
-              brand: "Honda",
-              model: "Civic",
-              price: 90,
-              vehicleType: "Sedan",
-              gearShift: "Automatic",
-              fuelType: "Gasoline",
-              consumption: "7.0 L/100km",
-              numDoors: 4,
-              numMaxPeople: 5,
-              description: "Economical and reliable sedan.",
-              picture: "",
-              rentStatus: "available",
-            },
-          ],
-          workingTime: 14,
-          openStatus: "opened",
-          location: "Location 2",
-          logo: "",
-          rating: 4.2,
-        },
-        {
-          index: 3,
-          name: "Facility 3",
-          vehicles: [
-            {
-              brand: "Ford",
-              model: "Escape",
-              price: 120,
-              vehicleType: "SUV",
-              gearShift: "Automatic",
-              fuelType: "Hybrid",
-              consumption: "5.0 L/100km",
-              numDoors: 5,
-              numMaxPeople: 5,
-              description: "Spacious and eco-friendly SUV.",
-              picture: "",
-              rentStatus: "available",
-            },
-          ],
-          workingTime: 12,
-          openStatus: "closed",
-          location: "Location 3",
-          logo: "",
-          rating: 4.8,
-        },
-      ],
+      facilities: [],
       searchFacilityName: "",
       searchVehicleType: "",
       searchLocation: "",
@@ -195,6 +119,21 @@ export default {
   },
   components: {
     Facility,
+  },
+  methods: {
+    async fetchFacilities() {
+      try {
+        const res = await this.axios.get(
+          `http://localhost:3000/facility/facilities`
+        );
+        this.facilities = res.data;
+      } catch (error) {
+        console.error("Error fetching facilities:", error);
+      }
+    },
+  },
+  mounted() {
+    this.fetchFacilities();
   },
   computed: {
     filteredFacilities() {

@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const session = require("express-session");
+const facilityRouter = require("./routes/facilityRouter");
 const userRouter = require("./routes/userRouter");
 
 const port = 3000;
@@ -10,7 +11,12 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:8080", "https://localhost:8080","http://localhost:8081", "https://localhost:8081"],
+    origin: [
+      "http://localhost:8080",
+      "https://localhost:8080",
+      "http://localhost:8081",
+      "https://localhost:8081",
+    ],
     credentials: true,
     exposedHeaders: ["set-cookie"],
   })
@@ -27,6 +33,7 @@ app.use(
 );
 
 //rute
+app.use("/facility", facilityRouter);
 app.use("/user", userRouter);
 
 app.listen(port, async () => {
