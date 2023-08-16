@@ -8,6 +8,11 @@
             <li class="nav-item" v-if="!authorized">
               <router-link to="/login" class="nav-link">Login</router-link>
             </li>
+            <li class="nav-item" v-if="user.role === 'admin'">
+              <router-link to="/registerManager" class="nav-link"
+                >Register Manager</router-link
+              >
+            </li>
             <li class="nav-item" v-if="authorized">
               <router-link to="/profile" class="nav-link">Profile</router-link>
             </li>
@@ -34,6 +39,8 @@ export default {
     async logout() {
       await this.axios.get("http://localhost:3000/user/logout");
       this.authorized = false;
+      this.user = {};
+      this.$router.push("/");
     },
   },
   watch: {

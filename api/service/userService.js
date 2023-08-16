@@ -59,6 +59,23 @@ function loginUser(data) {
   }
 }
 
+function createManager(data) {
+  if (!validate(data)) return false;
+
+  const Customer = {
+    username: data.username,
+    password: data.password,
+    firstName: data.firstName,
+    lastName: data.lastName,
+    gender: data.gender,
+    dateOfBirth: data.dateOfBirth,
+    role: "manager",
+    points: 0,
+  };
+  userRepository.save(Customer);
+  return true;
+}
+
 function createCustomer(data) {
   if (!validate(data)) return false;
 
@@ -76,4 +93,10 @@ function createCustomer(data) {
   return true;
 }
 
-module.exports = { createCustomer, loginUser, getByUsername, updateUser };
+module.exports = {
+  createCustomer,
+  loginUser,
+  getByUsername,
+  updateUser,
+  createManager,
+};

@@ -12,6 +12,14 @@ userRouter.post("/register", (req, res) => {
   res.sendStatus(400);
 });
 
+userRouter.post("/registerManager", (req, res) => {
+  if (userService.createManager(req.body)) {
+    res.sendStatus(200);
+    return;
+  }
+  res.sendStatus(400);
+});
+
 userRouter.post("/login", (req, res) => {
   if (userService.loginUser(req.body)) {
     req.session.username = req.body.username;
