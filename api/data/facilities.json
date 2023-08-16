@@ -22,5 +22,16 @@
     "location": "Location 1",
     "logo": "",
     "rating": 4.5
+  },
+  {
+    "name": "admin",
+    "vehicles": [],
+    "startTime": "22:02",
+    "endTime": "22:02",
+    "openStatus": "",
+    "location": "admin",
+    "logo": "",
+    "rating": "",
+    "id": 2
   }
 ]

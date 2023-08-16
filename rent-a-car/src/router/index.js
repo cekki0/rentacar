@@ -7,6 +7,7 @@ import Profile from "@/components/Profile.vue";
 import EditProfile from "@/components/EditProfile.vue";
 import ChangePassword from "@/components/ChangePassword.vue";
 import RegistrationManager from "../components/RegistrationManager.vue";
+import CreateFacility from "../components/CreateFacility";
 
 const routes = [
   { path: "/", component: Facilities },
@@ -20,7 +21,8 @@ const routes = [
   { path: "/profile", component: Profile },
   { path: "/profile/edit", component: EditProfile },
   { path: "/profile/changePassword", component: ChangePassword },
-  { path: "/registerManager", component: RegistrationManager }, // koji vue ide za component
+  { path: "/registerManager", component: RegistrationManager },
+  { path: "/createFacility", component: CreateFacility },
 ];
 
 const router = createRouter({

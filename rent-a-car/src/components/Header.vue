@@ -9,6 +9,11 @@
               <router-link to="/login" class="nav-link">Login</router-link>
             </li>
             <li class="nav-item" v-if="user.role === 'admin'">
+              <router-link to="/createFacility" class="nav-link"
+                >Create Facility</router-link
+              >
+            </li>
+            <li class="nav-item" v-if="user.role === 'admin'">
               <router-link to="/registerManager" class="nav-link"
                 >Register Manager</router-link
               >

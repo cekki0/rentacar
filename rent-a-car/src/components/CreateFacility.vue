@@ -1,0 +1,93 @@
+<template>
+  <div class="container mt-4">
+    <h2>Registracija Facility-ja</h2>
+    <form @submit.prevent="createFacility">
+      <div class="mb-3">
+        <label for="name" class="form-label">Ime:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          v-model="facility.name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Ulica:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="location"
+          v-model="facility.location"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="startTime" class="form-label"
+          >Početak radnog vremena:</label
+        >
+        <input
+          type="time"
+          class="form-control"
+          id="startTime"
+          v-model="facility.startTime"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="endTime" class="form-label">Kraj radnog vremena:</label>
+        <input
+          type="time"
+          class="form-control"
+          id="endTime"
+          v-model="facility.endTime"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Registruj</button>
+    </form>
+  </div>
+  <div class="container mt-4">
+    <label for="managerSelect" class="form-label">Menadžer:</label>
+    <select id="managerSelect" class="form-select" v-model="selectedManager">
+      <option
+        v-for="manager in filteredManagers"
+        :key="manager.id"
+        :value="manager.name"
+      >
+        {{ manager.name }}
+      </option>
+    </select>
+  </div>
+</template>
+
+<script>
+import router from "@/router";
+
+export default {
+  data() {
+    return {
+      facility: {
+        name: "",
+        location: "",
+        startTime: "",
+        endTime: "",
+      },
+    };
+  },
+  methods: {
+    async createFacility() {
+      try {
+        await this.axios.post(
+          "http://localhost:3000/facility/create",
+          this.facility
+        );
+        router.push("/");
+      } catch (error) {
+        alert("invalid input");
+        console.log(error);
+      }
+    },
+  },
+};
+</script>
