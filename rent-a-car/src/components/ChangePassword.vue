@@ -1,101 +1,106 @@
 <template>
-    <div class="container">
-      <h2>Change Password</h2>
-      <div class="card">
-        <div class="card-body">
-          <form @submit.prevent="changePassword">
-            <div class="mb-3">
-              <label for="OldPassword" class="form-label">Old Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="OldPassword"
-                v-model="oldPassword"
-                :class="{ 'is-invalid': oldPasswordError }"
-              />
-              <div class="invalid-feedback" v-if="oldPasswordError">
-                Old password is required.
-              </div>
+  <div class="container">
+    <h2>Change Password</h2>
+    <div class="card">
+      <div class="card-body">
+        <form @submit.prevent="changePassword">
+          <div class="mb-3">
+            <label for="OldPassword" class="form-label">Old Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="OldPassword"
+              v-model="oldPassword"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="NewPassword" class="form-label">New Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="NewPassword"
+              v-model="newPassword"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="ConfirmPassword" class="form-label"
+              >Confirm New Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="ConfirmPassword"
+              v-model="confirmPassword"
+            />
+            <div class="text-danger" v-if="newPassword !== confirmPassword">
+              Passwords do not match.
             </div>
-            <div class="mb-3">
-              <label for="NewPassword" class="form-label">New Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="NewPassword"
-                v-model="newPassword"
-                :class="{ 'is-invalid': newPasswordError }"
-              />
-              <div class="invalid-feedback" v-if="newPasswordError">
-                New password is required and must be at least 6 characters long.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="ConfirmNewPassword" class="form-label">Confirm New Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="ConfirmNewPassword"
-                v-model="confirmNewPassword"
-                :class="{ 'is-invalid': confirmNewPasswordError }"
-              />
-              <div class="invalid-feedback" v-if="confirmNewPasswordError">
-                Password confirmation does not match.
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Change Password</button>
-          </form>
-        </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Change Password</button>
+        </form>
       </div>
     </div>
-  </template>
-  
-  <script>
-  import router from '@/router';
-  export default {
-    data() {
-      return {
-        oldPassword: "",
-        newPassword: "",
-        confirmNewPassword: "",
-        oldPasswordError: false,
-        newPasswordError: false,
-        confirmNewPasswordError: false,
-      };
-    },
-    methods: {
-      validateForm() {
-        let valid = true;
-  
-        if (!this.oldPassword) {
-          this.oldPasswordError = true;
-          valid = false;
-        } else {
-          this.oldPasswordError = false;
-        }
-  
-        if (!this.newPassword || this.newPassword.length < 6) {
-          this.newPasswordError = true;
-          valid = false;
-        } else {
-          this.newPasswordError = false;
-        }
-  
-        if (this.newPassword !== this.confirmNewPassword) {
-          this.confirmNewPasswordError = true;
-          valid = false;
-        } else {
-          this.confirmNewPasswordError = false;
-        }
-  
-        return valid;
+  </div>
+</template>
+
+<script>
+import router from "@/router";
+
+export default {
+  data() {
+    return {
+      editedUser: {
+        password: "",
       },
-      changePassword() {
-        if (this.validateForm()) {
-          router.push('/login')
-        }
-      },
+      oldUser: {},
+      oldPassword: "",
+      newPassword: "",
+      confirmPassword: "",
+    };
+  },
+  mounted() {
+    this.axios
+      .get(`http://localhost:3000/user/profile/`)
+      .then((response) => {
+        this.oldUser = response.data;
+      })
+      .catch((error) => {
+        console.error("Error fetching user profile:", error);
+      });
+  },
+  methods: {
+    async logout() {
+      await this.axios.get("http://localhost:3000/user/logout");
+      this.authorized = false;
     },
-  };
-  </script>
-  
+    async changePassword() {
+      if (this.newPassword !== this.confirmPassword) {
+        alert("Passwords does not match");
+        return;
+      }
+
+      if (this.oldUser.password != this.oldPassword) {
+        alert("Incorrect old password");
+        return;
+      }
+
+      this.editedUser.password = this.newPassword;
+
+      try {
+        const response = await this.axios.patch(
+          `http://localhost:3000/user/profile/changePassword`,
+          this.editedUser
+        );
+
+        if (response.status === 200) {
+          this.logout();
+          this.$router.push(`/login/`);
+        } else {
+        }
+      } catch (error) {
+        alert(error);
+      }
+    },
+  },
+};
+</script>
