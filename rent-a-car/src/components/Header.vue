@@ -53,3 +53,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.nav-link:hover {
+  cursor: pointer;
+}
+</style>
