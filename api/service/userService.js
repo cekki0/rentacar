@@ -42,7 +42,7 @@ function getByUsername(username) {
 }
 
 function updateUser(user) {
-  return userRepository.update(user);
+  userRepository.update(user);
 }
 
 function loginUser(data) {
