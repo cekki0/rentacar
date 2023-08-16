@@ -9,5 +9,27 @@
     "role": "customer",
     "points": 0,
     "id": 1
+  },
+  {
+    "username": "admin",
+    "password": "admin",
+    "firstName": "sdf",
+    "lastName": "sadasd",
+    "gender": "Female",
+    "dateOfBirth": "0014-02-03",
+    "role": "admin",
+    "points": 0,
+    "id": 1
+  },
+  {
+    "username": "novi",
+    "password": "admin1",
+    "firstName": "admin",
+    "lastName": "admin",
+    "gender": "male",
+    "dateOfBirth": "0002-02-02",
+    "role": "manager",
+    "points": 0,
+    "id": 3
   }
 ]
