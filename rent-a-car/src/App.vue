@@ -1,24 +1,36 @@
 <template>
-  <div id="app">
+  <div id="app" class="app-container">
     <Header />
-    <router-view></router-view>
+    <main class="main-content">
+      <router-view></router-view>
+    </main>
     <Footer />
   </div>
-  </template>
-
+</template>
 <script>
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
     Footer,
   },
   data() {
-    return {
-    };
+    return {};
   },
-}
+};
 </script>
+
+<style scoped>
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+</style>

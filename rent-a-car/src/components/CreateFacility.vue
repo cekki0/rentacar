@@ -1,9 +1,9 @@
 <template>
   <div class="container mt-4">
-    <h2>Registracija Facility-ja</h2>
+    <h2>Register Facility</h2>
     <form @submit.prevent="createFacility">
       <div class="mb-3">
-        <label for="name" class="form-label">Ime:</label>
+        <label for="name" class="form-label">Name:</label>
         <input
           type="text"
           class="form-control"
@@ -13,7 +13,7 @@
         />
       </div>
       <div class="mb-3">
-        <label for="location" class="form-label">Ulica:</label>
+        <label for="location" class="form-label">Location:</label>
         <input
           type="text"
           class="form-control"
@@ -23,9 +23,7 @@
         />
       </div>
       <div class="mb-3">
-        <label for="startTime" class="form-label"
-          >Početak radnog vremena:</label
-        >
+        <label for="startTime" class="form-label">Open time:</label>
         <input
           type="time"
           class="form-control"
@@ -35,7 +33,7 @@
         />
       </div>
       <div class="mb-3">
-        <label for="endTime" class="form-label">Kraj radnog vremena:</label>
+        <label for="endTime" class="form-label">Close time:</label>
         <input
           type="time"
           class="form-control"
@@ -54,12 +52,17 @@
           required
         />
       </div>
-      <button type="submit" class="btn btn-primary">Registruj</button>
+      <button type="submit" class="btn btn-primary">Register</button>
     </form>
   </div>
   <div class="container mt-4">
-    <label for="managerSelect" class="form-label">Menadžer:</label>
-    <select id="managerSelect" class="form-select" v-model="selectedManager">
+    <label for="managerSelect" class="form-label">Manager:</label>
+    <select
+      id="managerSelect"
+      class="form-select"
+      v-model="selectedManager"
+      required
+    >
       <option v-for="manager in managers" :value="manager.username">
         {{ manager.username }}
       </option>

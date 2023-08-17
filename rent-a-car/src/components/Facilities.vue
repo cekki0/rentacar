@@ -1,97 +1,62 @@
 <template>
-  <!-- Search -->
   <div class="container">
-    <div class="mb-3">
-      <label for="searchFacilityName" class="form-label"
-        >Search by Facility Name</label
-      >
-      <input
-        type="text"
-        class="form-control"
-        id="searchFacilityName"
-        v-model="searchFacilityName"
-      />
+    <div class="row">
+      <!-- Search Options -->
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Search by Facility Name</label>
+        <input type="text" class="form-control" v-model="searchFacilityName" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Search by Vehicle Type</label>
+        <input type="text" class="form-control" v-model="searchVehicleType" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Search by Location</label>
+        <input type="text" class="form-control" v-model="searchLocation" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Search by Rating</label>
+        <input type="number" class="form-control" v-model="searchRating" />
+      </div>
+      <!-- Sort and Filter Options -->
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Sort by</label>
+        <select class="form-select" v-model="sortOption">
+          <option value="nameAsc">Name (A to Z)</option>
+          <option value="nameDesc">Name (Z to A)</option>
+          <option value="locationAsc">Location (A to Z)</option>
+          <option value="locationDesc">Location (Z to A)</option>
+          <option value="ratingAsc">Rating (Low to High)</option>
+          <option value="ratingDesc">Rating (High to Low)</option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Filter by Vehicle Type</label>
+        <input type="text" class="form-control" v-model="filterVehicleType" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-label">Filter by Fuel Type</label>
+        <input type="text" class="form-control" v-model="filterFuelType" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="form-check-label">Filter by Opened Facilities</label>
+        <input
+          type="checkbox"
+          class="form-check-input"
+          v-model="filterOpenedFacilities"
+        />
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="searchVehicleType" class="form-label"
-        >Search by Vehicle Type</label
-      >
-      <input
-        type="text"
-        class="form-control"
-        id="searchVehicleType"
-        v-model="searchVehicleType"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="searchLocation" class="form-label">Search by Location</label>
-      <input
-        type="text"
-        class="form-control"
-        id="searchLocation"
-        v-model="searchLocation"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="searchRating" class="form-label">Search by Rating</label>
-      <input
-        type="number"
-        class="form-control"
-        id="searchRating"
-        v-model="searchRating"
-      />
-    </div>
-    <!-- Sort -->
-    <div class="mb-3">
-      <label for="sortSelect" class="form-label">Sort by</label>
-      <select class="form-select" id="sortSelect" v-model="sortOption">
-        <option value="nameAsc">Name (A to Z)</option>
-        <option value="nameDesc">Name (Z to A)</option>
-        <option value="locationAsc">Location (A to Z)</option>
-        <option value="locationDesc">Location (Z to A)</option>
-        <option value="ratingAsc">Rating (Low to High)</option>
-        <option value="ratingDesc">Rating (High to Low)</option>
-      </select>
-    </div>
-    <!-- Filter -->
-    <div class="mb-3">
-      <label for="filterVehicleType" class="form-label"
-        >Filter by Vehicle Type</label
-      >
-      <input
-        type="text"
-        class="form-control"
-        id="filterVehicleType"
-        v-model="filterVehicleType"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="filterFuelType" class="form-label">Filter by Fuel Type</label>
-      <input
-        type="text"
-        class="form-control"
-        id="filterFuelType"
-        v-model="filterFuelType"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="filterOpenedFacilities" class="form-label"
-        >Filter by Opened Facilities</label
-      >
-      <input
-        type="checkbox"
-        class="form-check-input"
-        id="filterOpenedFacilities"
-        v-model="filterOpenedFacilities"
-      />
-    </div>
-    <div class="col">
-      <div v-for="facility in filteredFacilities">
-        <router-link
-          :to="{ name: 'FacilityDetails', params: { id: facility.id } }"
-        >
-          <Facility :facility="facility" />
-        </router-link>
+    <!-- Facility Listings -->
+    <div class="row">
+      <div class="col">
+        <div v-for="facility in filteredFacilities">
+          <router-link
+            :to="{ name: 'FacilityDetails', params: { id: facility.id } }"
+          >
+            <Facility :facility="facility" />
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
