@@ -11,6 +11,7 @@ import CreateFacility from "../components/CreateFacility";
 import ManageVehicles from "../components/ManageVehicles";
 import EditVehicle from "../components/EditVehicle";
 import CreateComments from "../components/CreateComments";
+import ShowUsers from "../components/ShowUsers";
 
 const routes = [
   { path: "/", component: Facilities },
@@ -29,6 +30,7 @@ const routes = [
   { path: "/manageVehicles", component: ManageVehicles },
   { path: "/manageVehicles/edit/:id", component: EditVehicle },
   { path: "/comment/createComments", component: CreateComments },
+  { path: "/showUsers", component: ShowUsers },
 ];
 
 const router = createRouter({

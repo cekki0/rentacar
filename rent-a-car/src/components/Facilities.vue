@@ -90,12 +90,7 @@
         <router-link
           :to="{ name: 'FacilityDetails', params: { id: facility.id } }"
         >
-          <Facility
-            :logo="facility.logo"
-            :name="facility.name"
-            :location="facility.location"
-            :rating="facility.rating"
-          />
+          <Facility :facility="facility" />
         </router-link>
       </div>
     </div>

@@ -45,6 +45,15 @@ userRouter.get("/profile/", middleware.isAuthenticated, (req, res) => {
   }
 });
 
+userRouter.get("/users", (req, res) => {
+  const users = userService.getAll();
+  if (users) {
+    res.status(200).json(users);
+  } else {
+    res.status(404).json({ message: "Users not found" });
+  }
+});
+
 userRouter.get("/managers", (req, res) => {
   const managers = userService.getAllManagers();
   if (managers) {

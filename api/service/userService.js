@@ -37,6 +37,10 @@ function loginValidation(data) {
   return true;
 }
 
+function getAll() {
+  return userRepository.getAll();
+}
+
 function getByUsername(username) {
   return userRepository.getByUsername(username);
 }
@@ -104,4 +108,5 @@ module.exports = {
   updateUser,
   createManager,
   getAllManagers,
+  getAll,
 };
