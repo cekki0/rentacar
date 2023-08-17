@@ -8,6 +8,10 @@ function getAll() {
   return facilityRepository.getAll();
 }
 
+function getById(id) {
+  return facilityRepository.getById(id);
+}
+
 function createFacility(data) {
   if (!validate(data)) return false;
   const Facility = {
@@ -27,4 +31,5 @@ function createFacility(data) {
 module.exports = {
   createFacility,
   getAll,
+  getById,
 };

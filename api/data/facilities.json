@@ -17,15 +17,32 @@
         "rentStatus": "available"
       }
     ],
-    "workingTime": 16,
+    "startTime": "22:02",
+    "endTime": "22:02",
     "openStatus": "opened",
     "location": "Location 1",
     "logo": "",
-    "rating": 4.5
+    "rating": 4.5,
+    "id": 1
   },
   {
     "name": "admin",
-    "vehicles": [],
+    "vehicles": [
+      {
+        "brand": "Toyota",
+        "model": "Camry",
+        "price": 100,
+        "vehicleType": "Sedan",
+        "gearShift": "Automatic",
+        "fuelType": "Gasoline",
+        "consumption": "7.5 L/100km",
+        "numDoors": 4,
+        "numMaxPeople": 5,
+        "description": "Comfortable and spacious sedan.",
+        "picture": "",
+        "rentStatus": "available"
+      }
+    ],
     "startTime": "22:02",
     "endTime": "22:02",
     "openStatus": "",

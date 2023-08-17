@@ -23,65 +23,27 @@ import Vehicle from "./Vehicle.vue";
 export default {
   data() {
     return {
-      facility: {
-        index: 0,
-        name: "Facility 3",
-        vehicles: [
-          {
-            brand: "Ford",
-            model: "Escape",
-            price: 120,
-            vehicleType: "SUV",
-            gearShift: "Automatic",
-            fuelType: "Hybrid",
-            consumption: "5.0 L/100km",
-            numDoors: 5,
-            numMaxPeople: 5,
-            description: "Spacious and eco-friendly SUV.",
-            picture: "",
-            rentStatus: "available",
-          },
-          {
-            brand: "Ford",
-            model: "Escape",
-            price: 120,
-            vehicleType: "SUV",
-            gearShift: "Automatic",
-            fuelType: "Hybrid",
-            consumption: "5.0 L/100km",
-            numDoors: 5,
-            numMaxPeople: 5,
-            description: "Spacious and eco-friendly SUV.",
-            picture: "",
-            rentStatus: "available",
-          },
-          {
-            brand: "Ford",
-            model: "Escape",
-            price: 120,
-            vehicleType: "SUV",
-            gearShift: "Automatic",
-            fuelType: "Hybrid",
-            consumption: "5.0 L/100km",
-            numDoors: 5,
-            numMaxPeople: 5,
-            description: "Spacious and eco-friendly SUV.",
-            picture: "",
-            rentStatus: "available",
-          },
-        ],
-        workingTime: 12,
-        openStatus: "closed",
-        location: "Location 3",
-        logo: "",
-        rating: 4.8,
-      },
+      facility: {},
     };
+  },
+  methods: {
+    async fetchFacility(id) {
+      try {
+        const res = await this.axios.get(
+          `http://localhost:3000/facility/facility:${id}`
+        );
+        this.facility = res.data;
+      } catch (error) {
+        console.error("Error fetching facility:", error);
+      }
+    },
+  },
+  mounted() {
+    const id = this.$route.params.id;
+    this.fetchFacility(id);
   },
   components: {
     Vehicle,
   },
 };
 </script>
-
-<style scoped></style>

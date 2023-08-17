@@ -86,8 +86,10 @@
       />
     </div>
     <div class="col">
-      <div v-for="(facility, index) in filteredFacilities" :key="index">
-        <router-link :to="{ name: 'FacilityDetails', params: { id: index } }">
+      <div v-for="facility in filteredFacilities">
+        <router-link
+          :to="{ name: 'FacilityDetails', params: { id: facility.id } }"
+        >
           <Facility
             :logo="facility.logo"
             :name="facility.name"

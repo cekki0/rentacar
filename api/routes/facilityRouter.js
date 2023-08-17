@@ -21,4 +21,14 @@ facilityRouter.get("/facilities", (req, res) => {
   }
 });
 
+facilityRouter.get("/facility:id", (req, res) => {
+  const id = req.params.id;
+  const facility = facilityService.getById(id);
+  if (facility) {
+    res.status(200).json(facility);
+  } else {
+    res.status(404).json({ message: "Facility not found" });
+  }
+});
+
 module.exports = facilityRouter;
