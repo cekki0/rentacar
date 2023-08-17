@@ -1,11 +1,11 @@
 const express = require("express");
-const commentsService = require("../service/commentsService");
+const commentService = require("../service/commentService");
 const middleware = require("./middleware");
 
 const commentRouter = express.Router();
 
-commentRouter.post("/createComments", (req, res) => {
-  if (commentsService.createComments(req.body)) {
+commentRouter.post("/create", (req, res) => {
+  if (commentService.createComments(req.body)) {
     res.sendStatus(200);
     return;
   }
@@ -13,11 +13,11 @@ commentRouter.post("/createComments", (req, res) => {
 });
 
 commentRouter.get("/comments", (req, res) => {
-  const comments = commentsService.getAll();
+  const comments = commentService.getAll();
   if (comments) {
     res.status(200).json(comments);
   } else {
-    res.status(404).json({ message: "comments not found" });
+    res.status(404).json({ message: "Comments not found" });
   }
 });
 

@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-4">
-    <h2 class="mb-4">Svi komentari</h2>
+    <h2 class="mb-4">Comments</h2>
     <ul class="list-group">
       <li v-for="comment in comments" :key="comment.id" class="list-group-item">
         {{ comment.comment }}

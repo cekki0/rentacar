@@ -1,9 +1,7 @@
-const commentsRepository = require("../repository/commentsRepository");
+const commentsRepository = require("../repository/commentRepository");
 
 function createComments(data) {
-  const Comment = {
-    comment: data.comment,
-  };
+  const Comment = data;
   commentsRepository.save(Comment);
   return true;
 }

@@ -1,9 +1,9 @@
 <template>
   <div class="container mt-4">
-    <h2>Unos komentara</h2>
+    <h2>Add Comment</h2>
     <form @submit.prevent="addComment">
       <div class="mb-3">
-        <label for="comment" class="form-label">Komentar:</label>
+        <label for="comment" class="form-label">Comment:</label>
         <textarea
           class="form-control"
           id="comment"
@@ -11,7 +11,7 @@
           required
         ></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Dodaj komentar</button>
+      <button type="submit" class="btn btn-primary">Add comment</button>
     </form>
   </div>
 </template>
@@ -28,12 +28,12 @@ export default {
   methods: {
     async addComment() {
       try {
-        await this.axios.post("http://localhost:3000/comment/createComments", {
+        await this.axios.post("http://localhost:3000/comment/create", {
           comment: this.newComment,
         });
         router.push("/");
       } catch (error) {
-        alert("Error za dodavanja komentara.");
+        alert("Error");
         console.error(error);
       }
     },
