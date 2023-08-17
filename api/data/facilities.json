@@ -1,6 +1,6 @@
 [
   {
-    "name": "Facility 1",
+    "name": "rent",
     "vehicles": [
       {
         "brand": "Toyota",
@@ -9,44 +9,44 @@
         "vehicleType": "Sedan",
         "gearShift": "Automatic",
         "fuelType": "Gasoline",
-        "consumption": "7.5 L/100km",
+        "consumption": 4,
         "numDoors": 4,
         "numMaxPeople": 5,
-        "description": "Comfortable and spacious sedan.",
+        "description": "",
         "picture": "",
-        "rentStatus": "available"
+        "rentStatus": ""
       }
     ],
-    "startTime": "22:02",
-    "endTime": "22:02",
-    "openStatus": "opened",
+    "startTime": "10:00",
+    "endTime": "22:00",
+    "openStatus": "",
     "location": "Location 1",
     "logo": "",
-    "rating": 4.5,
+    "rating": "",
     "id": 1
   },
   {
-    "name": "admin",
+    "name": "Rent a car 2",
     "vehicles": [
       {
-        "brand": "Toyota",
-        "model": "Camry",
+        "brand": "Nissan",
+        "model": "Random",
         "price": 100,
-        "vehicleType": "Sedan",
+        "vehicleType": "SUV",
         "gearShift": "Automatic",
-        "fuelType": "Gasoline",
-        "consumption": "7.5 L/100km",
-        "numDoors": 4,
-        "numMaxPeople": 5,
-        "description": "Comfortable and spacious sedan.",
+        "fuelType": "Diesel",
+        "consumption": 10,
+        "numDoors": 3,
+        "numMaxPeople": 7,
+        "description": "",
         "picture": "",
-        "rentStatus": "available"
+        "rentStatus": ""
       }
     ],
-    "startTime": "22:02",
-    "endTime": "22:02",
+    "startTime": "10:00",
+    "endTime": "22:00",
     "openStatus": "",
-    "location": "admin",
+    "location": "Location 2",
     "logo": "",
     "rating": "",
     "id": 2

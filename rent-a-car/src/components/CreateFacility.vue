@@ -50,12 +50,8 @@
   <div class="container mt-4">
     <label for="managerSelect" class="form-label">Menadžer:</label>
     <select id="managerSelect" class="form-select" v-model="selectedManager">
-      <option
-        v-for="manager in filteredManagers"
-        :key="manager.id"
-        :value="manager.name"
-      >
-        {{ manager.name }}
+      <option v-for="manager in managers" :value="manager.username">
+        {{ manager.username }}
       </option>
     </select>
   </div>
@@ -73,6 +69,8 @@ export default {
         startTime: "",
         endTime: "",
       },
+      managers: {},
+      selectedManager: {},
     };
   },
   methods: {
@@ -88,6 +86,17 @@ export default {
         console.log(error);
       }
     },
+    async fetchManagers() {
+      try {
+        const res = await this.axios.get(`http://localhost:3000/user/managers`);
+        this.managers = res.data;
+      } catch (error) {
+        console.error("Error fetching managers:", error);
+      }
+    },
+  },
+  mounted() {
+    this.fetchManagers();
   },
 };
 </script>

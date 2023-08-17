@@ -45,6 +45,15 @@ userRouter.get("/profile/", middleware.isAuthenticated, (req, res) => {
   }
 });
 
+userRouter.get("/managers", (req, res) => {
+  const managers = userService.getAllManagers();
+  if (managers) {
+    res.status(200).json(managers);
+  } else {
+    res.status(404).json({ message: "Managers not found" });
+  }
+});
+
 userRouter.patch("/profile/edit/", middleware.isAuthenticated, (req, res) => {
   const username = req.session.username;
   const updatedUserData = req.body;

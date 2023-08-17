@@ -5,29 +5,34 @@ const path = "./data/facilities.json";
 const repository = new Repository(path);
 
 function getAll() {
-    return repository.getAll();
+  return repository.getAll();
 }
 
 function getById(id) {
-    return repository.getById(id);
+  return repository.getById(id);
 }
 
 function save(user) {
-    return repository.save(user);
+  return repository.save(user);
 }
 
 function update(user) {
-    repository.update(user);
+  repository.update(user);
 }
 
 function remove(id) {
-    return repository.remove(id);
+  return repository.remove(id);
+}
+
+function getByName(name) {
+  return getAll().find((user) => user.name == name);
 }
 
 module.exports = {
-    getAll,
-    getById,
-    remove,
-    save,
-    update,
+  getAll,
+  getById,
+  remove,
+  save,
+  update,
+  getByName,
 };

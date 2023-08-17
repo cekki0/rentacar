@@ -1,11 +1,11 @@
 [
   {
-    "username": "sima",
-    "password": "123456",
-    "firstName": "sdf",
-    "lastName": "sadasd",
-    "gender": "Female",
-    "dateOfBirth": "0014-02-03",
+    "username": "customer",
+    "password": "customer",
+    "firstName": "customer",
+    "lastName": "customer",
+    "gender": "Male",
+    "dateOfBirth": "2001-01-01",
     "role": "customer",
     "points": 0,
     "id": 1
@@ -13,21 +13,21 @@
   {
     "username": "admin",
     "password": "admin",
-    "firstName": "sdf",
-    "lastName": "sadasd",
-    "gender": "Female",
-    "dateOfBirth": "0014-02-03",
+    "firstName": "admin",
+    "lastName": "admin",
+    "gender": "Male",
+    "dateOfBirth": "2001-01-01",
     "role": "admin",
     "points": 0,
     "id": 2
   },
   {
-    "username": "novi",
-    "password": "admin1",
-    "firstName": "admin",
-    "lastName": "admin",
+    "username": "manager",
+    "password": "manager",
+    "firstName": "manager",
+    "lastName": "manager",
     "gender": "male",
-    "dateOfBirth": "0002-02-02",
+    "dateOfBirth": "2001-01-01",
     "role": "manager",
     "points": 0,
     "id": 3

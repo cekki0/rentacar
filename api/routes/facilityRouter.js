@@ -21,7 +21,7 @@ facilityRouter.get("/facilities", (req, res) => {
   }
 });
 
-facilityRouter.get("/facility:id", (req, res) => {
+facilityRouter.get("/facility/:id", (req, res) => {
   const id = req.params.id;
   const facility = facilityService.getById(id);
   if (facility) {

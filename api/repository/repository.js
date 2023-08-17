@@ -20,7 +20,7 @@ class Repository {
   }
 
   getById(id) {
-    return this.getAll().find((entity) => (entity.id = id));
+    return this.getAll().find((entity) => entity.id == id);
   }
 
   save(entity) {

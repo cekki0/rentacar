@@ -76,6 +76,10 @@ function createManager(data) {
   return true;
 }
 
+function getAllManagers() {
+  return userRepository.getAll().filter((user) => user.role == "manager");
+}
+
 function createCustomer(data) {
   if (!validate(data)) return false;
 
@@ -99,4 +103,5 @@ module.exports = {
   getByUsername,
   updateUser,
   createManager,
+  getAllManagers,
 };

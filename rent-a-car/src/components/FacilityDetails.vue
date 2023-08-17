@@ -30,7 +30,7 @@ export default {
     async fetchFacility(id) {
       try {
         const res = await this.axios.get(
-          `http://localhost:3000/facility/facility:${id}`
+          `http://localhost:3000/facility/facility/${id}`
         );
         this.facility = res.data;
       } catch (error) {
