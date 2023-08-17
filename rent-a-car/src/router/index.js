@@ -10,6 +10,7 @@ import RegistrationManager from "../components/RegistrationManager.vue";
 import CreateFacility from "../components/CreateFacility";
 import ManageVehicles from "../components/ManageVehicles";
 import EditVehicle from "../components/EditVehicle";
+import CreateComments from "../components/CreateComments";
 
 const routes = [
   { path: "/", component: Facilities },
@@ -27,6 +28,7 @@ const routes = [
   { path: "/createFacility", component: CreateFacility },
   { path: "/manageVehicles", component: ManageVehicles },
   { path: "/manageVehicles/edit/:id", component: EditVehicle },
+  { path: "/comment/createComments", component: CreateComments },
 ];
 
 const router = createRouter({

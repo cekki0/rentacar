@@ -44,6 +44,16 @@
           required
         />
       </div>
+      <div class="mb-3">
+        <label for="logo" class="form-label">Logo:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="logo"
+          v-model="facility.logo"
+          required
+        />
+      </div>
       <button type="submit" class="btn btn-primary">Registruj</button>
     </form>
   </div>
@@ -68,6 +78,7 @@ export default {
         location: "",
         startTime: "",
         endTime: "",
+        logo: "",
       },
       managers: {},
       selectedManager: {},

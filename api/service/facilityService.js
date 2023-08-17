@@ -21,7 +21,7 @@ function createFacility(data) {
     endTime: data.endTime,
     openStatus: "",
     location: data.location,
-    logo: "",
+    logo: data.logo,
     rating: "",
   };
   facilityRepository.save(Facility);
