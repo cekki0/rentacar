@@ -3,10 +3,24 @@
     "name": "RentACar",
     "startTime": "10:00",
     "endTime": "22:00",
-    "openStatus": "",
     "location": "Location 1",
     "logo": "",
-    "rating": "",
     "id": 1
+  },
+  {
+    "name": "Batonga",
+    "startTime": "10:00",
+    "endTime": "22:02",
+    "location": "Batonga",
+    "logo": "Batonga",
+    "id": 2
+  },
+  {
+    "name": "Prodajem drva",
+    "startTime": "10:10",
+    "endTime": "22:10",
+    "location": "Milete Jaksica 2",
+    "logo": "dobar logo",
+    "id": 3
   }
 ]

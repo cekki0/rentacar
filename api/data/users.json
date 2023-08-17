@@ -30,6 +30,7 @@
     "dateOfBirth": "2001-01-01",
     "role": "manager",
     "points": 0,
-    "id": 3
+    "id": 3,
+    "facilityId": 2
   }
 ]

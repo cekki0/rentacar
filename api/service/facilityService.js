@@ -16,13 +16,10 @@ function createFacility(data) {
   if (!validate(data)) return false;
   const Facility = {
     name: data.name,
-    vehicles: [],
     startTime: data.startTime,
     endTime: data.endTime,
-    openStatus: "",
     location: data.location,
     logo: data.logo,
-    rating: "",
   };
   facilityRepository.save(Facility);
   return true;

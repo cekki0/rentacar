@@ -6,18 +6,20 @@ const path = "./data/facilities.json";
 const repository = new Repository(path);
 
 function getAll() {
-  // const facilities = repository.getAll();
-  // const vehicles = vehicleRepository.getAll();
-  // for (const facility of facilities) {
-  //   loadVehicles(facility, vehicles);
-  // }
+  const facilities = repository.getAll();
+  const vehicles = vehicleRepository.getAll();
+  for (const facility of facilities) {
+    loadVehicles(facility, vehicles);
+  }
 
-  // return facilities;
-  return repository.getAll();
+  return facilities;
 }
 
 function getById(id) {
-  return repository.getById(id);
+  const facility = repository.getById(id);
+  const vehicles = vehicleRepository.getAll();
+  loadVehicles(facility, vehicles);
+  return facility;
 }
 
 function save(facility) {
@@ -32,11 +34,11 @@ function remove(id) {
   return repository.remove(id);
 }
 
-// function loadVehicles(facility, vehicles) {
-//   facility.vehicles = vehicles.filter(
-//     (vehicle) => vehicle.facilityId == facility.Id
-//   );
-// }
+function loadVehicles(facility, vehicles) {
+  facility.vehicles = vehicles.filter(
+    (vehicle) => vehicle.facilityId == facility.id
+  );
+}
 
 module.exports = {
   getAll,

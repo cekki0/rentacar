@@ -133,6 +133,7 @@ import Vehicle from "../components/Vehicle.vue";
 export default {
   data() {
     return {
+      user: {},
       vehicle: {
         brand: "",
         model: "",
@@ -146,14 +147,48 @@ export default {
         description: "",
         picture: "",
         rentStatus: "",
+        facilityId: "",
       },
       vehicles: {},
     };
   },
-  mounted() {
-    this.fetchVehicles();
+  async mounted() {
+    await this.getUser();
+    this.vehicle.facilityId = this.user.facilityId;
+    console.log(this.user.facilityId);
+    this.fetchFacility(this.user.facilityId);
   },
   methods: {
+    async getUser() {
+      try {
+        const res = await this.axios.get("http://localhost:3000/user/profile/");
+        if (res.data.username) {
+          this.user = res.data;
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    },
+    async fetchFacility(id) {
+      try {
+        const res = await this.axios.get(
+          `http://localhost:3000/facility/facility/${id}`
+        );
+        this.vehicles = res.data.vehicles;
+      } catch (error) {
+        console.error("Error fetching facility:", error);
+      }
+    },
+    // async fetchVehicles() {
+    //   try {
+    //     const res = await this.axios.get(
+    //       `http://localhost:3000/vehicle/vehicles`
+    //     );
+    //     this.vehicles = res.data;
+    //   } catch (error) {
+    //     console.error("Error fetching vehicles:", error);
+    //   }
+    // },
     async addVehicle() {
       if (!this.validateForm()) {
         alert("Please fill out all fields correctly.");
@@ -167,16 +202,6 @@ export default {
         this.$router.push("/manageVehicles");
       } catch (error) {
         console.error("Error adding vehicle:", error);
-      }
-    },
-    async fetchVehicles() {
-      try {
-        const res = await this.axios.get(
-          `http://localhost:3000/vehicle/vehicles`
-        );
-        this.vehicles = res.data;
-      } catch (error) {
-        console.error("Error fetching vehicles:", error);
       }
     },
     validateForm() {
