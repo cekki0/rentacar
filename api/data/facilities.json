@@ -1,23 +1,6 @@
 [
   {
     "name": "RentACar",
-    "vehicles": [
-      {
-        "id": 1,
-        "brand": "Toyota",
-        "model": "Camry",
-        "price": 100,
-        "vehicleType": "Sedan",
-        "gearShift": "Automatic",
-        "fuelType": "Gasoline",
-        "consumption": 4,
-        "numDoors": 4,
-        "numMaxPeople": 5,
-        "description": "",
-        "picture": "",
-        "rentStatus": ""
-      }
-    ],
     "startTime": "10:00",
     "endTime": "22:00",
     "openStatus": "",

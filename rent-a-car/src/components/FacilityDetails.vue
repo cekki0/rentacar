@@ -6,7 +6,9 @@
         <h5 class="card-title">{{ facility.name }}</h5>
         <p class="card-text">Location: {{ facility.location }}</p>
         <p class="card-text">Rating: {{ facility.rating }}</p>
-        <p class="card-text">Working Time: {{ facility.workingTime }}hours</p>
+        <p class="card-text">
+          Working Time: {{ facility.startTime }} - {{ facility.endTime }}
+        </p>
         <p class="card-text">Open Status: {{ facility.openStatus }}</p>
       </div>
       <h3>Vehicles:</h3>

@@ -12,6 +12,7 @@
     "description": "Amazing car.",
     "picture": "benz",
     "rentStatus": "available",
+    "facilityId": 1,
     "deleted": true,
     "id": 1
   }
