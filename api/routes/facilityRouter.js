@@ -1,5 +1,6 @@
 const express = require("express");
 const facilityService = require("../service/facilityService");
+const commentsService = require("../service/commentsService");
 const middleware = require("./middleware");
 
 const facilityRouter = express.Router();

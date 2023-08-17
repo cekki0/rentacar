@@ -14,16 +14,22 @@
         <Vehicle :vehicle="vehicle" />
       </div>
     </div>
+    <Comments></Comments>
+    <router-link to="/comment/createComments" class="btn btn-primary">
+      Dodaj komentar
+    </router-link>
   </div>
 </template>
 
 <script>
 import Vehicle from "./Vehicle.vue";
+import Comments from "./Comments.vue";
 
 export default {
   data() {
     return {
       facility: {},
+      comments: [],
     };
   },
   methods: {
@@ -38,12 +44,15 @@ export default {
       }
     },
   },
+
   mounted() {
     const id = this.$route.params.id;
     this.fetchFacility(id);
   },
+
   components: {
     Vehicle,
+    Comments,
   },
 };
 </script>

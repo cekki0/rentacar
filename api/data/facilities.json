@@ -50,5 +50,27 @@
     "logo": "",
     "rating": "",
     "id": 2
+  },
+  {
+    "name": "facilitnjaca",
+    "vehicles": [],
+    "startTime": "11:10",
+    "endTime": "11:21",
+    "openStatus": "",
+    "location": "432",
+    "logo": "",
+    "rating": "",
+    "id": 3
+  },
+  {
+    "name": "sad",
+    "vehicles": [],
+    "startTime": "11:10",
+    "endTime": "11:41",
+    "openStatus": "",
+    "location": "ulica",
+    "logo": "logo.png",
+    "rating": "",
+    "id": 4
   }
 ]

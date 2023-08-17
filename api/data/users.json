@@ -31,5 +31,27 @@
     "role": "manager",
     "points": 0,
     "id": 3
+  },
+  {
+    "username": "manager2",
+    "password": "manager",
+    "firstName": "manager",
+    "lastName": "manager",
+    "gender": "male",
+    "dateOfBirth": "2001-01-01",
+    "role": "manager",
+    "points": 0,
+    "id": 4
+  },
+  {
+    "username": "manager3",
+    "password": "manager",
+    "firstName": "manager",
+    "lastName": "manager",
+    "gender": "male",
+    "dateOfBirth": "2001-01-01",
+    "role": "manager",
+    "points": 0,
+    "id": 5
   }
 ]
