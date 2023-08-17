@@ -84,6 +84,16 @@ function getAllManagers() {
   return userRepository.getAll().filter((user) => user.role == "manager");
 }
 
+function setManagerFacility(managerId, facilityId) {
+  console.log(managerId, facilityId);
+  for (const user of userRepository.getAll()) {
+    if (user.id == managerId) {
+      user.facilityId = facilityId;
+      userRepository.update(user);
+    }
+  }
+}
+
 function createCustomer(data) {
   if (!validate(data)) return false;
 
@@ -109,4 +119,5 @@ module.exports = {
   createManager,
   getAllManagers,
   getAll,
+  setManagerFacility,
 };
