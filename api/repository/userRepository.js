@@ -9,7 +9,7 @@ function getAll() {
   const users = repository.getAll();
   for (const user of users) {
     if (user.role === "manager") {
-      user.facility = facilityRepository.getById(user.facilityid);
+      user.facility = facilityRepository.getById(user.facilityId);
     }
   }
 
