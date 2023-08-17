@@ -84,16 +84,20 @@ export default {
         logo: "",
       },
       managers: {},
-      selectedManager: {},
+      selectedManager: "",
     };
   },
   methods: {
     async createFacility() {
+      if (!this.selectedManager) {
+        alert("Izaberite menadžera pre nego što nastavite.");
+        return;
+      }
       try {
-        await this.axios.post(
-          "http://localhost:3000/facility/create",
-          this.facility
-        );
+        await this.axios.post("http://localhost:3000/facility/create", {
+          facility: this.facility,
+          selectedManager: this.selectedManager,
+        });
         router.push("/");
       } catch (error) {
         alert("invalid input");
@@ -103,7 +107,7 @@ export default {
     async fetchManagers() {
       try {
         const res = await this.axios.get(`http://localhost:3000/user/managers`);
-        this.managers = res.data;
+        this.managers = res.data.filter((manager) => !manager.facilityId);
       } catch (error) {
         console.error("Error fetching managers:", error);
       }

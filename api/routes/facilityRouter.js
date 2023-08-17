@@ -1,11 +1,14 @@
 const express = require("express");
 const facilityService = require("../service/facilityService");
+const userService = require("../service/userService");
 const middleware = require("./middleware");
 
 const facilityRouter = express.Router();
 
 facilityRouter.post("/create", (req, res) => {
-  if (facilityService.createFacility(req.body)) {
+  const facility = facilityService.createFacility(req.body.facility);
+  if (facility) {
+    userService.setManagerFacility(req.body.selectedManager.id, facility.id);
     res.sendStatus(200);
     return;
   }

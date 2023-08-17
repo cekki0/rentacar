@@ -21,8 +21,8 @@ function createFacility(data) {
     location: data.location,
     logo: data.logo,
   };
-  facilityRepository.save(Facility);
-  return true;
+
+  return facilityRepository.save(Facility);
 }
 
 module.exports = {

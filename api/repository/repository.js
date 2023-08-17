@@ -28,6 +28,7 @@ class Repository {
     entity.id = this.getNextId();
     list.push(entity);
     jsonfile.writeFileSync(this.filePath, list);
+    return entity;
   }
 
   update(entity) {
