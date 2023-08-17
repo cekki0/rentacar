@@ -1,0 +1,18 @@
+[
+  {
+    "brand": "Mercedes",
+    "model": "Benz",
+    "price": 300,
+    "vehicleType": "SUV",
+    "gearShift": "automatic",
+    "fuelType": "diesel",
+    "consumption": 5,
+    "numDoors": 5,
+    "numMaxPeople": 5,
+    "description": "Amazing car.",
+    "picture": "benz",
+    "rentStatus": "available",
+    "deleted": true,
+    "id": 1
+  }
+]

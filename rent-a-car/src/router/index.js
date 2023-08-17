@@ -8,6 +8,8 @@ import EditProfile from "@/components/EditProfile.vue";
 import ChangePassword from "@/components/ChangePassword.vue";
 import RegistrationManager from "../components/RegistrationManager.vue";
 import CreateFacility from "../components/CreateFacility";
+import ManageVehicles from "../components/ManageVehicles";
+import EditVehicle from "../components/EditVehicle";
 
 const routes = [
   { path: "/", component: Facilities },
@@ -23,6 +25,8 @@ const routes = [
   { path: "/profile/changePassword", component: ChangePassword },
   { path: "/registerManager", component: RegistrationManager },
   { path: "/createFacility", component: CreateFacility },
+  { path: "/manageVehicles", component: ManageVehicles },
+  { path: "/manageVehicles/edit/:id", component: EditVehicle },
 ];
 
 const router = createRouter({

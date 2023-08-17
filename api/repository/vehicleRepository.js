@@ -1,6 +1,6 @@
 const Repository = require("./repository");
 
-const path = "./data/facilities.json";
+const path = "./data/vehicles.json";
 
 const repository = new Repository(path);
 

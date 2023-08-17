@@ -1,8 +1,9 @@
 [
   {
-    "name": "rent",
+    "name": "RentACar",
     "vehicles": [
       {
+        "id": 1,
         "brand": "Toyota",
         "model": "Camry",
         "price": 100,
@@ -24,31 +25,5 @@
     "logo": "",
     "rating": "",
     "id": 1
-  },
-  {
-    "name": "Rent a car 2",
-    "vehicles": [
-      {
-        "brand": "Nissan",
-        "model": "Random",
-        "price": 100,
-        "vehicleType": "SUV",
-        "gearShift": "Automatic",
-        "fuelType": "Diesel",
-        "consumption": 10,
-        "numDoors": 3,
-        "numMaxPeople": 7,
-        "description": "",
-        "picture": "",
-        "rentStatus": ""
-      }
-    ],
-    "startTime": "10:00",
-    "endTime": "22:00",
-    "openStatus": "",
-    "location": "Location 2",
-    "logo": "",
-    "rating": "",
-    "id": 2
   }
 ]

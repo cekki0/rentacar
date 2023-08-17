@@ -3,6 +3,7 @@ const cors = require("cors");
 const session = require("express-session");
 const facilityRouter = require("./routes/facilityRouter");
 const userRouter = require("./routes/userRouter");
+const vehicleRouter = require("./routes/vehicleRouter");
 
 const port = 3000;
 const app = express();
@@ -35,6 +36,7 @@ app.use(
 //rute
 app.use("/facility", facilityRouter);
 app.use("/user", userRouter);
+app.use("/vehicle", vehicleRouter);
 
 app.listen(port, async () => {
   console.log(`Server running at port ${port}`);
