@@ -221,7 +221,7 @@ export default {
               gender: this.gender,
             }
           );
-          router.push("/");
+          router.push("/createFacility");
         } catch (error) {
           alert("invalid input");
           console.log(error);

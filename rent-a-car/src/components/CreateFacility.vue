@@ -67,11 +67,13 @@
         {{ manager.username }}
       </option>
     </select>
-  </div>
-  <div v-if="!selectedManager">
-    <router-link to="/registerManager" class="nav-link"
-      >Register Manager</router-link
+    <button
+      class="btn btn-primary"
+      @click="onClick()"
+      v-if="this.managers.length == 0"
     >
+      Register manager
+    </button>
   </div>
 </template>
 
@@ -93,6 +95,9 @@ export default {
     };
   },
   methods: {
+    onClick() {
+      this.$router.push("/registerManager");
+    },
     async createFacility() {
       if (!this.selectedManager) {
         alert("Izaberite menadžera pre nego što nastavite.");
@@ -118,8 +123,8 @@ export default {
       }
     },
   },
-  mounted() {
-    this.fetchManagers();
+  async mounted() {
+    await this.fetchManagers();
   },
 };
 </script>
