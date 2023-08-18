@@ -51,11 +51,11 @@
     <div class="row">
       <div class="col">
         <div v-for="facility in filteredFacilities">
-          <router-link
-            :to="{ name: 'FacilityDetails', params: { id: facility.id } }"
-          >
-            <Facility :facility="facility" />
-          </router-link>
+          <Facility
+            :facility="facility"
+            @click="onClick(facility.id)"
+            style="cursor: pointer"
+          />
         </div>
       </div>
     </div>
@@ -93,9 +93,12 @@ export default {
         console.error("Error fetching facilities:", error);
       }
     },
+    onClick(id) {
+      this.$router.push(`/facility/${id}`);
+    },
   },
-  mounted() {
-    this.fetchFacilities();
+  async mounted() {
+    await this.fetchFacilities();
   },
   computed: {
     filteredFacilities() {

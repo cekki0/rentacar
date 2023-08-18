@@ -65,7 +65,6 @@ function loginUser(data) {
 
 function createManager(data) {
   if (!validate(data)) return false;
-
   const Customer = {
     username: data.username,
     password: data.password,
@@ -74,7 +73,6 @@ function createManager(data) {
     gender: data.gender,
     dateOfBirth: data.dateOfBirth,
     role: "manager",
-    points: 0,
   };
   userRepository.save(Customer);
   return true;
@@ -85,7 +83,6 @@ function getAllManagers() {
 }
 
 function setManagerFacility(managerId, facilityId) {
-  console.log(managerId, facilityId);
   for (const user of userRepository.getAll()) {
     if (user.id == managerId) {
       user.facilityId = facilityId;
@@ -105,6 +102,7 @@ function createCustomer(data) {
     gender: data.gender,
     dateOfBirth: data.dateOfBirth,
     role: "customer",
+    userType: "default",
     points: 0,
   };
   userRepository.save(Customer);

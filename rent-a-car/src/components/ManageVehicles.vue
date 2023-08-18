@@ -123,7 +123,9 @@
           </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Add Vehicle</button>
+      <button type="submit" class="btn btn-primary" v-if="user.facilityId">
+        Add Vehicle
+      </button>
     </form>
     <div class="col">
       <div v-for="vehicle in vehicles" :key="vehicle.id">

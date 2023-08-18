@@ -56,7 +56,6 @@ userRouter.get("/users", (req, res) => {
 
 userRouter.get("/managers", (req, res) => {
   const managers = userService.getAllManagers();
-  console.log("nesto");
   if (managers) {
     res.status(200).json(managers);
   } else {
@@ -69,6 +68,7 @@ userRouter.patch("/profile/edit/", middleware.isAuthenticated, (req, res) => {
   const updatedUserData = req.body;
 
   const user = userService.getByUsername(username);
+  user.facility = {};
 
   if (user) {
     Object.assign(user, updatedUserData);

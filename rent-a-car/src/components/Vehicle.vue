@@ -4,7 +4,6 @@
       <h5 class="card-title">{{ vehicle.brand }} {{ vehicle.model }}</h5>
       <p class="card-text">Price: ${{ vehicle.price }}</p>
       <p class="card-text">Type: {{ vehicle.vehicleType }}</p>
-      <p class="card-text">Facility: {{ vehicle.facility }}</p>
       <p class="card-text">Gear Shift: {{ vehicle.gearShift }}</p>
       <p class="card-text">Fuel Type: {{ vehicle.fuelType }}</p>
       <p class="card-text">Consumption: {{ vehicle.consumption }}</p>

@@ -8,6 +8,7 @@
     "dateOfBirth": "2001-01-01",
     "role": "customer",
     "points": 0,
+    "userType": "default",
     "id": 1
   },
   {
@@ -18,7 +19,6 @@
     "gender": "Male",
     "dateOfBirth": "2001-01-01",
     "role": "admin",
-    "points": 0,
     "id": 2
   },
   {
@@ -29,31 +29,42 @@
     "gender": "male",
     "dateOfBirth": "2001-01-01",
     "role": "manager",
-    "points": 0,
     "id": 3,
     "facilityId": 1
   },
   {
-    "username": "managerNovi",
-    "password": "managerNovi",
-    "firstName": "managerNovi",
-    "lastName": "managerNovi",
+    "username": "manager2",
+    "password": "manager2",
+    "firstName": "manager2",
+    "lastName": "manager2",
     "gender": "male",
-    "dateOfBirth": "2001-03-03",
+    "dateOfBirth": "2001-01-01",
     "role": "manager",
-    "points": 0,
     "id": 4,
-    "facilityId": 5
+    "facilityId": 2
   },
   {
-    "username": "nekimanager",
-    "password": "nekimanager",
-    "firstName": "nekimanager",
-    "lastName": "nekimanager",
+    "username": "kupac",
+    "password": "123123",
+    "firstName": "kupac",
+    "lastName": "kupac",
     "gender": "male",
-    "dateOfBirth": "0002-02-02",
-    "role": "manager",
+    "dateOfBirth": "2002-02-02",
+    "role": "customer",
+    "userType": "default",
     "points": 0,
     "id": 5
+  },
+  {
+    "username": "manager3",
+    "password": "manager3",
+    "firstName": "da",
+    "lastName": "da",
+    "gender": "Female",
+    "dateOfBirth": "0002-02-02",
+    "role": "manager",
+    "id": 6,
+    "facilityId": 3,
+    "facility": {}
   }
 ]
