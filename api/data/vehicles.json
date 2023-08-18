@@ -1,1 +1,53 @@
-[{"brand":"Mercedes","model":"Benz","price":300,"vehicleType":"SUV","fuelType":"diesel","consumption":10,"gearShift":"automatic","numDoors":5,"numMaxPeople":5,"description":"Amazing car","picture":"picture","rentStatus":"available","facilityId":1,"deleted":false,"id":1},{"brand":"Skoda","model":"Superb","price":300,"vehicleType":"Sedan","fuelType":"diesel","consumption":5,"gearShift":"automatic","numDoors":5,"numMaxPeople":5,"description":"Good car.","picture":"picture","rentStatus":"available","facilityId":2,"deleted":false,"id":3},{"brand":"BMW","model":"X6","price":450,"vehicleType":"SUV","fuelType":"diesel","consumption":8,"gearShift":"automatic","numDoors":5,"numMaxPeople":5,"description":"Amazing car.","picture":"picture","rentStatus":"available","facilityId":3,"deleted":false,"id":3}]
+[
+  {
+    "brand": "Mercedes",
+    "model": "Benz",
+    "price": 300,
+    "vehicleType": "SUV",
+    "fuelType": "diesel",
+    "consumption": 10,
+    "gearShift": "automatic",
+    "numDoors": 5,
+    "numMaxPeople": 5,
+    "description": "Amazing car",
+    "picture": "picture",
+    "rentStatus": "available",
+    "facilityId": 1,
+    "deleted": false,
+    "id": 1
+  },
+  {
+    "brand": "Skoda",
+    "model": "Superb",
+    "price": 300,
+    "vehicleType": "Sedan",
+    "fuelType": "diesel",
+    "consumption": 5,
+    "gearShift": "automatic",
+    "numDoors": 5,
+    "numMaxPeople": 5,
+    "description": "Good car.",
+    "picture": "picture",
+    "rentStatus": "available",
+    "facilityId": 2,
+    "deleted": false,
+    "id": 3
+  },
+  {
+    "brand": "BMW",
+    "model": "X6",
+    "price": 450,
+    "vehicleType": "SUV",
+    "fuelType": "diesel",
+    "consumption": 8,
+    "gearShift": "automatic",
+    "numDoors": 5,
+    "numMaxPeople": 5,
+    "description": "Amazing car.",
+    "picture": "picture",
+    "rentStatus": "available",
+    "facilityId": 3,
+    "deleted": false,
+    "id": 3
+  }
+]

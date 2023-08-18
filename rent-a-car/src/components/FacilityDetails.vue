@@ -16,6 +16,7 @@
         <Vehicle :vehicle="vehicle" />
       </div>
     </div>
+    <Orders></Orders>
     <Comments></Comments>
     <router-link to="/comment/createComments" class="btn btn-primary">
       Dodaj komentar
@@ -26,7 +27,7 @@
 <script>
 import Vehicle from "./Vehicle.vue";
 import Comments from "./Comments.vue";
-
+import Orders from "./Orders.vue";
 export default {
   data() {
     return {
@@ -70,6 +71,7 @@ export default {
   components: {
     Vehicle,
     Comments,
+    Orders,
   },
 };
 </script>
