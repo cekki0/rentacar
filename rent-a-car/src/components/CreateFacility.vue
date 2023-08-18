@@ -70,6 +70,11 @@
       </option>
     </select>
   </div>
+  <div v-if="!selectedManager">
+    <router-link to="/registerManager" class="nav-link"
+      >Register Manager</router-link
+    >
+  </div>
 </template>
 
 <script>
