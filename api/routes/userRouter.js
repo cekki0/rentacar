@@ -56,6 +56,7 @@ userRouter.get("/users", (req, res) => {
 
 userRouter.get("/managers", (req, res) => {
   const managers = userService.getAllManagers();
+  console.log("nesto");
   if (managers) {
     res.status(200).json(managers);
   } else {

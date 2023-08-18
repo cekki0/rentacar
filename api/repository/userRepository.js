@@ -8,7 +8,7 @@ const repository = new Repository(path);
 function getAll() {
   const users = repository.getAll();
   for (const user of users) {
-    if (user.role === "manager") {
+    if (user.role === "manager" && user.facilityId) {
       user.facility = facilityRepository.getById(user.facilityId);
     }
   }
@@ -18,8 +18,11 @@ function getAll() {
 
 function getById(id) {
   const user = repository.getById(id);
+  if (!user) {
+    return user;
+  }
 
-  if (user.role === "manager")
+  if (user.role === "manager" && user.facilityId)
     user.facility = facilityRepository.getById(user.facilityId);
 
   return user;
@@ -39,16 +42,11 @@ function remove(id) {
 
 function getByUsername(username) {
   const user = getAll().find((user) => user.username == username);
+  if (!user) {
+    return user;
+  }
 
-  if (user.role === "manager")
-    user.facility = facilityRepository.getById(user.facilityId);
-
-  return user;
-}
-
-function getByEmail(email) {
-  const user = getAll().find((user) => user.email == email);
-  if (user.role === "manager")
+  if (user.role === "manager" && user.facilityId)
     user.facility = facilityRepository.getById(user.facilityId);
 
   return user;
@@ -56,7 +54,6 @@ function getByEmail(email) {
 
 module.exports = {
   getAll,
-  getByEmail,
   getById,
   getByUsername,
   remove,

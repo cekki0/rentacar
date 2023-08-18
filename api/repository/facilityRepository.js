@@ -17,6 +17,9 @@ function getAll() {
 
 function getById(id) {
   const facility = repository.getById(id);
+  if (!facility) {
+    return facility;
+  }
   const vehicles = vehicleRepository.getAll();
   loadVehicles(facility, vehicles);
   return facility;

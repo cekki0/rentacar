@@ -32,5 +32,28 @@
     "points": 0,
     "id": 3,
     "facilityId": 1
+  },
+  {
+    "username": "managerNovi",
+    "password": "managerNovi",
+    "firstName": "managerNovi",
+    "lastName": "managerNovi",
+    "gender": "male",
+    "dateOfBirth": "2001-03-03",
+    "role": "manager",
+    "points": 0,
+    "id": 4,
+    "facilityId": 5
+  },
+  {
+    "username": "nekimanager",
+    "password": "nekimanager",
+    "firstName": "nekimanager",
+    "lastName": "nekimanager",
+    "gender": "male",
+    "dateOfBirth": "0002-02-02",
+    "role": "manager",
+    "points": 0,
+    "id": 5
   }
 ]

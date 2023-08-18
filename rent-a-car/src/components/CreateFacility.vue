@@ -63,7 +63,7 @@
       v-model="selectedManager"
       required
     >
-      <option v-for="manager in managers" :value="manager.username">
+      <option v-for="manager in managers" :value="manager">
         {{ manager.username }}
       </option>
     </select>
