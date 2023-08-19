@@ -60,7 +60,7 @@
     "orderEndDate": "2023-08-28",
     "price": 1000,
     "userId": 1,
-    "status": "returned"
+    "status": "accepted"
   },
   {
     "id": 2,
@@ -117,8 +117,8 @@
     "orderStartDate": "2023-08-18",
     "orderEndDate": "2023-08-28",
     "price": 1000,
-    "userId": 5,
-    "status": "canceled"
+    "userId": 1,
+    "status": "returned"
   },
   {
     "id": 4,

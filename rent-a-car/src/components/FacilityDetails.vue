@@ -96,7 +96,8 @@ export default {
       if (
         order.userId == this.user.id &&
         order.status == "returned" &&
-        this.user.role == "customer"
+        this.user.role == "customer" &&
+        order.facilityId == this.facility.id
       )
         this.flag = true;
     }
