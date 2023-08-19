@@ -16,8 +16,11 @@
         <Vehicle :vehicle="vehicle" />
       </div>
     </div>
-    <Comments></Comments>
-    <router-link to="/comment/createComments" class="btn btn-primary">
+    <Comments :kurcina="this.facility.id"></Comments>
+    <router-link
+      :to="`/comment/createComments/${this.facility.id}`"
+      class="btn btn-primary"
+    >
       Dodaj komentar
     </router-link>
   </div>

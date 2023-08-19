@@ -30,6 +30,7 @@ export default {
       try {
         await this.axios.post("http://localhost:3000/comment/create", {
           comment: this.newComment,
+          facilityId: this.$route.params.id,
         });
         router.push("/");
       } catch (error) {

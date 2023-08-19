@@ -18,6 +18,11 @@
                 >Register Manager</router-link
               >
             </li>
+            <li class="nav-item" v-if="user.role === 'manager'">
+              <router-link to="/allComments" class="nav-link"
+                >All comments</router-link
+              >
+            </li>
             <li class="nav-item" v-if="user.role === 'admin'">
               <router-link to="/showUsers" class="nav-link"
                 >Show users</router-link

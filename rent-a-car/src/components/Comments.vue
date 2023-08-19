@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  props: ["kurcina"],
   data() {
     return {
       comments: [],
@@ -19,8 +20,11 @@ export default {
   methods: {
     async fetchComments() {
       try {
-        const response = await this.axios.get(
-          "http://localhost:3000/comment/comments"
+        const response = await this.axios.post(
+          "http://localhost:3000/comment/comments",
+          {
+            facilityId: this.kurcina,
+          }
         );
         this.comments = response.data;
       } catch (error) {
@@ -30,6 +34,11 @@ export default {
   },
   mounted() {
     this.fetchComments();
+  },
+  watch: {
+    kurcina(value, oldvalue) {
+      this.fetchComments();
+    },
   },
 };
 </script>

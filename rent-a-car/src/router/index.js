@@ -12,6 +12,7 @@ import ManageVehicles from "../components/ManageVehicles";
 import EditVehicle from "../components/EditVehicle";
 import CreateComments from "../components/CreateComments";
 import ShowUsers from "../components/ShowUsers";
+import AllCommentsByManager from "../components/AllCommentsByManager";
 
 const routes = [
   { path: "/", component: Facilities },
@@ -22,6 +23,7 @@ const routes = [
     name: "FacilityDetails",
     component: FacilityDetails,
   },
+
   { path: "/profile", component: Profile },
   { path: "/profile/edit", component: EditProfile },
   { path: "/profile/changePassword", component: ChangePassword },
@@ -29,8 +31,9 @@ const routes = [
   { path: "/createFacility", component: CreateFacility },
   { path: "/manageVehicles", component: ManageVehicles },
   { path: "/manageVehicles/edit/:id", component: EditVehicle },
-  { path: "/comment/createComments", component: CreateComments },
+  { path: "/comment/createComments/:id", component: CreateComments },
   { path: "/showUsers", component: ShowUsers },
+  { path: "/allComments", component: AllCommentsByManager },
 ];
 
 const router = createRouter({

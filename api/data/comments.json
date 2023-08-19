@@ -1,1 +1,17 @@
-[{ "comment": "Ok", "id": 1 }]
+[
+  { "comment": "Ok", "id": 1, "facilityId": 1, "status": "pending" },
+  { "comment": "lol", "id": 2, "facilityId": 1, "status": "pending" },
+  { "comment": "ok", "id": 3, "facilityId": 1, "status": "pending" },
+  {
+    "comment": "lagano uprcavanje",
+    "facilityId": 1,
+    "id": 4,
+    "status": "Denied"
+  },
+  {
+    "comment": "jusufe SIneeeee",
+    "facilityId": "1",
+    "id": 5,
+    "status": "Approved"
+  }
+]
