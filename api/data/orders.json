@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "identificator": "ok",
+    "vehicles": [
+      {
+        "brand": "Mercedes",
+        "model": "Benz",
+        "price": 300,
+        "vehicleType": "SUV",
+        "fuelType": "diesel",
+        "consumption": 10,
+        "gearShift": "automatic",
+        "numDoors": 5,
+        "numMaxPeople": 5,
+        "description": "Amazing car",
+        "picture": "picture",
+        "rentStatus": "available",
+        "facilityId": 1,
+        "deleted": false,
+        "id": 1
+      },
+      {
+        "brand": "Skoda",
+        "model": "Superb",
+        "price": 300,
+        "vehicleType": "Sedan",
+        "fuelType": "diesel",
+        "consumption": 5,
+        "gearShift": "automatic",
+        "numDoors": 5,
+        "numMaxPeople": 5,
+        "description": "Good car.",
+        "picture": "picture",
+        "rentStatus": "available",
+        "facilityId": 2,
+        "deleted": false,
+        "id": 3
+      },
+      {
+        "brand": "BMW",
+        "model": "X6",
+        "price": 450,
+        "vehicleType": "SUV",
+        "fuelType": "diesel",
+        "consumption": 8,
+        "gearShift": "automatic",
+        "numDoors": 5,
+        "numMaxPeople": 5,
+        "description": "Amazing car.",
+        "picture": "picture",
+        "rentStatus": "available",
+        "facilityId": 3,
+        "deleted": false,
+        "id": 3
+      }
+    ],
+    "facilityId": 1,
+    "orderStartDate": "2023-08-18",
+    "orderEndDate": "2023-08-28",
+    "price": 1000,
+    "userId": 1,
+    "status": "accepted"
+  },
+  {
+    "id": 2,
+    "identificator": 92324234,
+    "vehicles": [
+      {
+        "brand": "Mercedes",
+        "model": "Benz",
+        "price": 300,
+        "vehicleType": "SUV",
+        "fuelType": "diesel",
+        "consumption": 10,
+        "gearShift": "automatic",
+        "numDoors": 5,
+        "numMaxPeople": 5,
+        "description": "Amazing car",
+        "picture": "picture",
+        "rentStatus": "available",
+        "facilityId": 1,
+        "deleted": false,
+        "id": 1
+      }
+    ],
+    "facilityId": 2,
+    "orderStartDate": "2023-08-18",
+    "orderEndDate": "2023-08-27",
+    "price": 1000,
+    "userId": 5,
+    "status": "returned"
+  },
+  {
+    "id": 3,
+    "identificator": "ok2",
+    "vehicles": [
+      {
+        "brand": "BMW",
+        "model": "X6",
+        "price": 450,
+        "vehicleType": "SUV",
+        "fuelType": "diesel",
+        "consumption": 8,
+        "gearShift": "automatic",
+        "numDoors": 5,
+        "numMaxPeople": 5,
+        "description": "Amazing car.",
+        "picture": "picture",
+        "rentStatus": "available",
+        "facilityId": 3,
+        "deleted": false,
+        "id": 3
+      }
+    ],
+    "facilityId": 1,
+    "orderStartDate": "2023-08-18",
+    "orderEndDate": "2023-08-28",
+    "price": 1000,
+    "userId": 5,
+    "status": "canceled"
+  },
+  {
+    "id": 4,
+    "identificator": 23423423,
+    "vehicles": [
+      {
+        "brand": "Skoda",
+        "model": "Superb",
+        "price": 300,
+        "vehicleType": "Sedan",
+        "fuelType": "diesel",
+        "consumption": 5,
+        "gearShift": "automatic",
+        "numDoors": 5,
+        "numMaxPeople": 5,
+        "description": "Good car.",
+        "picture": "picture",
+        "rentStatus": "available",
+        "facilityId": 2,
+        "deleted": false,
+        "id": 3
+      }
+    ],
+    "facilityId": 2,
+    "orderStartDate": "2023-08-18",
+    "orderEndDate": "2023-08-28",
+    "price": 1000,
+    "userId": 1,
+    "status": "accepted"
+  }
+]

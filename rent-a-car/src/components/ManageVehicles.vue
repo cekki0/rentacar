@@ -136,7 +136,6 @@
 </template>
 
 <script>
-import router from "@/router";
 import Vehicle from "../components/Vehicle.vue";
 export default {
   data() {
@@ -219,7 +218,3 @@ export default {
   components: { Vehicle },
 };
 </script>
-
-<style scoped>
-/* Add your custom styles here */
-</style>

@@ -29,7 +29,7 @@
 <script>
 import Vehicle from "./Vehicle.vue";
 import Comments from "./Comments.vue";
-
+import Orders from "./Orders.vue";
 export default {
   data() {
     return {
@@ -73,6 +73,7 @@ export default {
   components: {
     Vehicle,
     Comments,
+    Orders,
   },
 };
 </script>

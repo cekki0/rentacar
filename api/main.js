@@ -5,6 +5,7 @@ const facilityRouter = require("./routes/facilityRouter");
 const userRouter = require("./routes/userRouter");
 const vehicleRouter = require("./routes/vehicleRouter");
 const commentRouter = require("./routes/commentRouter");
+const orderRouter = require("./routes/orderRouter");
 
 const port = 3000;
 const app = express();
@@ -39,6 +40,7 @@ app.use("/facility", facilityRouter);
 app.use("/user", userRouter);
 app.use("/vehicle", vehicleRouter);
 app.use("/comment", commentRouter);
+app.use("/order", orderRouter);
 
 app.listen(port, async () => {
   console.log(`Server running at port ${port}`);

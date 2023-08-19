@@ -33,6 +33,19 @@
                 >Manage vehicles</router-link
               >
             </li>
+            <li class="nav-item" v-if="user.role === 'manager'">
+              <router-link to="/managerInfo" class="nav-link"
+                >Orders Info</router-link
+              >
+            </li>
+            <li class="nav-item" v-if="user.role === 'manager'">
+              <router-link
+                :to="`/facility/${user.facilityId}`"
+                class="nav-link"
+              >
+                My Facility
+              </router-link>
+            </li>
             <li class="nav-item" v-if="authorized">
               <router-link to="/profile" class="nav-link">Profile</router-link>
             </li>
