@@ -9,7 +9,10 @@
         {{ order.orderEndDate }}
       </p>
       <p class="card-text"><strong>Price:</strong> ${{ order.price }}</p>
-      <p class="card-text"><strong>User:</strong> {{ order.userId }}</p>
+      <p class="card-text">
+        <strong>User:</strong>
+        {{ getUserById(order.userId) }}
+      </p>
       <p class="card-text"><strong>Status:</strong> {{ order.status }}</p>
     </div>
   </div>
@@ -19,7 +22,7 @@
 export default {
   data() {
     return {
-      users: {},
+      users: [],
       orders: {},
     };
   },
@@ -35,6 +38,10 @@ export default {
       } catch (error) {
         console.error("Error fetching users:", error);
       }
+    },
+    getUserById(userId) {
+      const user = this.users.find((user) => user.id === userId);
+      return user ? user.firstName + " " + user.lastName : "User not found";
     },
     formatDateTime(dateTime) {
       const formattedDateTime = new Date(dateTime).toLocaleString();

@@ -56,8 +56,8 @@
       }
     ],
     "facilityId": 1,
-    "orderStartDate": "2023-08-18",
-    "orderEndDate": "2023-08-28",
+    "orderStartDate": "2023-09-18",
+    "orderEndDate": "2023-09-28",
     "price": 1000,
     "userId": 1,
     "status": "accepted"
@@ -87,7 +87,7 @@
     "facilityId": 2,
     "orderStartDate": "2023-08-18",
     "orderEndDate": "2023-08-27",
-    "price": 1000,
+    "price": 1700,
     "userId": 5,
     "status": "returned"
   },
@@ -116,7 +116,7 @@
     "facilityId": 1,
     "orderStartDate": "2023-08-18",
     "orderEndDate": "2023-08-28",
-    "price": 1000,
+    "price": 1700,
     "userId": 5,
     "status": "canceled"
   },

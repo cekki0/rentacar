@@ -209,7 +209,6 @@ export default {
     async register() {
       if (this.validateForm()) {
         try {
-          // res.data za pristup json objektu u responsu, ukoliko postoji
           const res = await this.axios.post(
             "http://localhost:3000/user/registerManager",
             {
