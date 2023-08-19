@@ -26,7 +26,9 @@ export default {
             facilityId: this.kurcina,
           }
         );
-        this.comments = response.data;
+        this.comments = response.data.filter(
+          (comment) => comment.status == "Approved"
+        );
       } catch (error) {
         console.error("Error fetching comments:", error);
       }
