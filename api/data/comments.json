@@ -1,7 +1,7 @@
 [
-  { "comment": "Ok", "id": 1, "facilityId": 1, "status": "pending" },
-  { "comment": "lol", "id": 2, "facilityId": 1, "status": "pending" },
-  { "comment": "ok", "id": 3, "facilityId": 1, "status": "pending" },
+  { "comment": "Ok", "id": 1, "facilityId": 1, "status": "Approved" },
+  { "comment": "lol", "id": 2, "facilityId": 1, "status": "Approved" },
+  { "comment": "ok", "id": 3, "facilityId": 1, "status": "Denied" },
   {
     "comment": "lagano uprcavanje",
     "facilityId": 1,
@@ -10,8 +10,8 @@
   },
   {
     "comment": "jusufe SIneeeee",
-    "facilityId": "1",
+    "facilityId": 2,
     "id": 5,
-    "status": "Approved"
+    "status": "pending"
   }
 ]

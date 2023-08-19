@@ -21,15 +21,24 @@ function getByFacilityId(facilityId) {
 }
 
 function setApprove(id) {
-  const comment = commentsRepository.getById(id);
-  comment.status = "Approved";
-  commentsRepository.save(comment);
+  const comment = commentsRepository.getById(id); // nadje komentar sa tim id
+  console.log();
+  if (comment) {
+    comment.status = "Approved";
+    commentsRepository.update(comment);
+  }
+  return comment;
 }
 
 function setDeny(id) {
-  const comment = commentsRepository.getById(id);
-  comment.status = "Denyed";
-  commentsRepository.save(comment);
+  // id komentara
+  const comment = commentsRepository.getById(id); // nadje komentar sa tim id
+  console.log();
+  if (comment) {
+    comment.status = "Denied";
+    commentsRepository.update(comment);
+  }
+  return comment;
 }
 
 module.exports = {

@@ -26,9 +26,6 @@ commentRouter.get("/allComments", (req, res) => {
   const comments = commentService.getByFacilityId(
     userService.getByUsername(req.session.username).facilityId
   );
-
-  console.log(comments);
-  console.log("gggggggggggggggg");
   if (comments) {
     res.status(200).json(comments);
   } else {
@@ -38,6 +35,7 @@ commentRouter.get("/allComments", (req, res) => {
 
 commentRouter.patch("/denyComment/:id", (req, res) => {
   const comment = commentService.setDeny(req.params.id);
+  console.log(comment);
   if (comment) {
     res.status(200).json(comment);
   } else {

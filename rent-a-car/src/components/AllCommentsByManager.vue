@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { resolveDirective } from "vue";
+
 export default {
   data() {
     return {
@@ -25,21 +27,23 @@ export default {
     async approveComment(commentId) {
       try {
         const res = await this.axios.patch(
-          `http://localhost:3000/comment/aproveComment/${this.comments}`
+          `http://localhost:3000/comment/approveComment/${commentId}`
         );
-        this.comments = res.data;
+        this.fetchComments();
       } catch (error) {
         alert("Error");
         console.error(error);
       }
     },
 
-    async denyComment() {
+    async denyComment(commentId) {
       try {
         const res = await this.axios.patch(
-          `http://localhost:3000/comment/denyComment/${this.comments}`
+          `http://localhost:3000/comment/denyComment/${commentId}`
         );
         this.comments = res.data;
+
+        this.fetchComments();
       } catch (error) {
         alert("Error");
         console.error(error);
