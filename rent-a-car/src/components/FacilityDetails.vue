@@ -18,7 +18,7 @@
     </div>
     <Comments :kurcina="this.facility.id"></Comments>
     <router-link
-      v-if="this.user.role == 'customer'"
+      v-if="this.flag"
       :to="`/comment/createComments/${this.facility.id}`"
       class="btn btn-primary"
     >
@@ -30,13 +30,15 @@
 <script>
 import Vehicle from "./Vehicle.vue";
 import Comments from "./Comments.vue";
-import Orders from "./Orders.vue";
+
 export default {
   data() {
     return {
       facility: {},
       comments: [],
       user: {},
+      orders: {},
+      flag: false,
     };
   },
   methods: {
@@ -48,6 +50,14 @@ export default {
         }
       } catch (error) {
         console.error("Error:", error);
+      }
+    },
+    async fetchOrders() {
+      try {
+        const res = await this.axios.get(`http://localhost:3000/order/orders`);
+        this.orders = res.data;
+      } catch (error) {
+        console.error("Error fetching orders:", error);
       }
     },
     async fetchFacility(id) {
@@ -80,13 +90,21 @@ export default {
     const id = this.$route.params.id;
     this.fetchFacility(id);
     this.checkIfOpened();
+    await this.fetchOrders();
     await this.getUser();
+    for (const order of this.orders) {
+      if (
+        order.userId == this.user.id &&
+        order.status == "returned" &&
+        this.user.role == "customer"
+      )
+        this.flag = true;
+    }
   },
 
   components: {
     Vehicle,
     Comments,
-    Orders,
   },
 };
 </script>
