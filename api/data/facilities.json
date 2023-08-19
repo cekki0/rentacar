@@ -4,7 +4,7 @@
     "startTime": "10:00",
     "endTime": "22:00",
     "location": "Location 1",
-    "logo": "",
+    "logo": "https://img.freepik.com/free-vector/flat-code-logo-collection_23-2148829940.jpg?w=826&t=st=1692408974~exp=1692409574~hmac=d1305686c63aa1b6b077f89d3b08fdbdc4635c01168124f10b0766d5ffc881b1",
     "id": 1
   },
   {
@@ -12,7 +12,7 @@
     "startTime": "10:00",
     "endTime": "22:00",
     "location": "Uspenska 3",
-    "logo": "logo",
+    "logo": "https://img.freepik.com/free-vector/flat-code-logo-collection_23-2148829940.jpg?w=826&t=st=1692408974~exp=1692409574~hmac=d1305686c63aa1b6b077f89d3b08fdbdc4635c01168124f10b0766d5ffc881b1",
     "id": 2
   },
   {
@@ -20,7 +20,7 @@
     "startTime": "10:00",
     "endTime": "22:00",
     "location": "Jevrejska 26",
-    "logo": "logo",
+    "logo": "https://img.freepik.com/free-vector/flat-code-logo-collection_23-2148829940.jpg?w=826&t=st=1692408974~exp=1692409574~hmac=d1305686c63aa1b6b077f89d3b08fdbdc4635c01168124f10b0766d5ffc881b1",
     "id": 3
   }
 ]

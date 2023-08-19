@@ -12,8 +12,14 @@
         <p class="card-text">Rating: {{ facility.rating }}</p>
       </div>
       <h3>Vehicles:</h3>
-      <div v-for="(vehicle, index) in facility.vehicles" :key="index">
-        <Vehicle :vehicle="vehicle" />
+      <div class="row">
+        <div
+          v-for="(vehicle, index) in facility.vehicles"
+          :key="index"
+          class="col-md-3 mb-3"
+        >
+          <Vehicle :vehicle="vehicle" />
+        </div>
       </div>
     </div>
     <Orders></Orders>
@@ -75,3 +81,9 @@ export default {
   },
 };
 </script>
+<style>
+.card-img-top {
+  max-height: 100px;
+  max-width: 100px;
+}
+</style>

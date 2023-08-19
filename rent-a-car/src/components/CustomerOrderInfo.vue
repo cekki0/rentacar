@@ -2,27 +2,30 @@
   <div class="container">
     <h2>Orders</h2>
     <div>
-      <label>Search by Price: </label>
+      <label>Search by Price:</label>
       <input v-model="priceFrom" type="number" placeholder="From" />
       <input v-model="priceTo" type="number" placeholder="To" />
       <button @click="searchByPrice">Search</button>
     </div>
     <div>
-      <label>Search by Date: </label>
+      <label>Search by Date:</label>
       <input v-model="dateFrom" type="date" />
       <input v-model="dateTo" type="date" />
       <button @click="searchByDate">Search</button>
     </div>
+    <div>
+      <label>Search by Facility Name:</label>
+      <input
+        v-model="facilityNameSearch"
+        type="text"
+        placeholder="Facility Name"
+      />
+      <button @click="searchByFacilityName">Search</button>
+    </div>
     <button @click="sortByDate">Sort by Date</button>
     <button @click="sortByPrice">Sort by Price</button>
+    <button @click="sortByFacilityName">Sort by Facility Name</button>
     <Orders :orders="filteredOrders"></Orders>
-
-    <h2>Users</h2>
-    <div class="row">
-      <div v-for="user in users" :key="user.id" class="col-md-3 mb-3">
-        <User :user="user" />
-      </div>
-    </div>
   </div>
 </template>
 
@@ -40,12 +43,13 @@ export default {
       priceTo: null,
       dateFrom: null,
       dateTo: null,
+      facilityNameSearch: "",
     };
   },
   async mounted() {
-    await this.getManager();
+    await this.getUser();
     await this.fetchOrders();
-    await this.fetchUsers();
+    await this.getUser();
   },
   computed: {
     filteredOrders() {
@@ -69,11 +73,19 @@ export default {
         );
       }
 
+      if (this.facilityNameSearch !== "") {
+        filtered = filtered.filter((order) =>
+          order.facility.name
+            .toLowerCase()
+            .includes(this.facilityNameSearch.toLowerCase())
+        );
+      }
+
       return filtered;
     },
   },
   methods: {
-    async getManager() {
+    async getUser() {
       try {
         const res = await this.axios.get("http://localhost:3000/user/profile/");
         if (res.data.username) {
@@ -86,35 +98,18 @@ export default {
     async fetchOrders() {
       try {
         const res = await this.axios.get(`http://localhost:3000/order/orders`);
-        this.orders = res.data.filter(
-          (order) => order.facilityId == this.user.facilityId
-        );
+        this.orders = res.data.filter((order) => order.userId == this.user.id);
       } catch (error) {
         console.error("Error fetching orders:", error);
-      }
-    },
-    async fetchUsers() {
-      try {
-        const res = await this.axios.get(`http://localhost:3000/user/users`);
-        const userIds = new Set();
-        const filteredUsers = [];
-        for (const order of this.orders) {
-          if (!userIds.has(order.userId)) {
-            filteredUsers.push(
-              res.data.find((user) => user.id == order.userId)
-            );
-            userIds.add(order.userId);
-          }
-        }
-        this.users = filteredUsers;
-      } catch (error) {
-        console.error("Error fetching users:", error);
       }
     },
     searchByPrice() {
       this.fetchOrders();
     },
     searchByDate() {
+      this.fetchOrders();
+    },
+    searchByFacilityName() {
       this.fetchOrders();
     },
     sortByDate() {
@@ -124,6 +119,13 @@ export default {
     },
     sortByPrice() {
       this.orders.sort((a, b) => a.price - b.price);
+    },
+    sortByFacilityName() {
+      this.orders.sort((a, b) => {
+        const facilityNameA = a.facility.name.toLowerCase();
+        const facilityNameB = b.facility.name.toLowerCase();
+        return facilityNameA.localeCompare(facilityNameB);
+      });
     },
   },
   components: { Orders, User },

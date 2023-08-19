@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img :src="logo" class="card-img-top" alt="Facility Logo" />
+    <img :src="facility.logo" class="card-img-top" alt="Facility Logo" />
     <div class="card-body">
       <h5 class="card-title">{{ facility.name }}</h5>
       <p class="card-text">{{ facility.location }}</p>
@@ -38,3 +38,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.card-img-top {
+  max-height: 100px;
+  max-width: 100px;
+}
+</style>

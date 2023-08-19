@@ -13,12 +13,26 @@
         <strong>User:</strong>
         {{ getUserById(order.userId) }}
       </p>
+      <p class="card-text">
+        <strong>Facility:</strong>
+        {{ order.facility.name }}
+      </p>
       <p class="card-text"><strong>Status:</strong> {{ order.status }}</p>
+    </div>
+    <div class="row">
+      <div
+        v-for="vehicle in order.vehicles"
+        :key="vehicle.id"
+        class="col-md-3 mb-3"
+      >
+        <VehicleMinimalDetail :vehicle="vehicle" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import VehicleMinimalDetail from "../components/VehicleMinimalDetail.vue";
 export default {
   data() {
     return {
@@ -50,6 +64,9 @@ export default {
   },
   async mounted() {
     await this.fetchUsers();
+  },
+  components: {
+    VehicleMinimalDetail,
   },
 };
 </script>

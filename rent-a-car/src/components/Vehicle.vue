@@ -11,7 +11,7 @@
       <p class="card-text">Max People: {{ vehicle.numMaxPeople }}</p>
       <p class="card-text">Description: {{ vehicle.description }}</p>
       <p class="card-text">Rent Status: {{ vehicle.rentStatus }}</p>
-      <img :src="vehicle.picture" alt="Vehicle Picture" />
+      <img :src="vehicle.picture" class="card-img-top" alt="Vehicle Picture" />
       <router-link
         v-if="user.role === 'manager' && user.facilityId == vehicle.facilityId"
         :to="`/manageVehicles/edit/${vehicle.id}`"
@@ -77,3 +77,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.card-img-top {
+  max-height: 100px;
+  max-width: 100px;
+}
+</style>

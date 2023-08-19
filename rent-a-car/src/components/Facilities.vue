@@ -49,14 +49,12 @@
     </div>
     <!-- Facility Listings -->
     <div class="row">
-      <div class="col">
-        <div v-for="facility in filteredFacilities">
-          <Facility
-            :facility="facility"
-            @click="onClick(facility.id)"
-            style="cursor: pointer"
-          />
-        </div>
+      <div v-for="facility in filteredFacilities" class="col-md-3 mb-3">
+        <Facility
+          :facility="facility"
+          @click="onClick(facility.id)"
+          style="cursor: pointer"
+        />
       </div>
     </div>
   </div>

@@ -22,13 +22,14 @@
         </button>
       </div>
     </div>
+    <CustomerOrderInfo v-if="this.user.role == 'customer'" />
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import router from "@/router";
-
+import CustomerOrderInfo from "../components/CustomerOrderInfo.vue";
 export default {
   data() {
     return {
@@ -52,6 +53,9 @@ export default {
       .catch((error) => {
         console.error("Error fetching user profile:", error);
       });
+  },
+  components: {
+    CustomerOrderInfo,
   },
 };
 </script>
