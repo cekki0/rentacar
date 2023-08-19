@@ -1,7 +1,7 @@
 [
   { "comment": "ok", "id": 1, "facilityId": 1, "status": "Approved" },
   { "comment": "asdasd", "facilityId": 2, "status": "Approved", "id": 2 },
-  { "comment": "asdasdasd", "facilityId": "1", "status": "Approved", "id": 3 },
-  { "comment": "ok", "facilityId": "1", "status": "Denied", "id": 4 },
+  { "comment": "asdasdasd", "facilityId": "2", "status": "Approved", "id": 3 },
+  { "comment": "ok", "facilityId": "2", "status": "Denied", "id": 4 },
   { "comment": "dobar", "facilityId": "1", "status": "Approved", "id": 5 }
 ]

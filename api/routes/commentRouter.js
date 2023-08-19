@@ -33,6 +33,15 @@ commentRouter.get("/allComments", (req, res) => {
   }
 });
 
+commentRouter.get("/allCommentsAdmin", (req, res) => {
+  const comments = commentService.getAll();
+  if (comments) {
+    res.status(200).json(comments);
+  } else {
+    res.status(404).json({ message: "Comments not found" });
+  }
+});
+
 commentRouter.patch("/denyComment/:id", (req, res) => {
   const comment = commentService.setDeny(req.params.id);
   console.log(comment);

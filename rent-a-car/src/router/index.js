@@ -14,6 +14,7 @@ import CreateComments from "../components/CreateComments";
 import ShowUsers from "../components/ShowUsers";
 import AllCommentsByManager from "../components/AllCommentsByManager";
 import ManagerInfo from "../components/ManagerInfo";
+import AllComments from "../components/AllComments";
 
 const routes = [
   { path: "/", component: Facilities },
@@ -36,6 +37,7 @@ const routes = [
   { path: "/showUsers", component: ShowUsers },
   { path: "/allComments", component: AllCommentsByManager },
   { path: "/managerInfo", component: ManagerInfo },
+  { path: "/allCommentsAdmin", component: AllComments },
 ];
 
 const router = createRouter({
