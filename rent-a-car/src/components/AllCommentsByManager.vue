@@ -1,14 +1,16 @@
 <template>
-  <div class="comment-list">
-    <div v-for="comment in comments" :key="comment.id" class="comment">
-      <div class="comment-content">{{ comment.comment }}</div>
-      <div class="comment-actions" v-if="comment.status == 'pending'">
-        <button @click="approveComment(comment.id)" class="btn btn-success">
-          Approve
-        </button>
-        <button @click="denyComment(comment.id)" class="btn btn-danger">
-          Deny
-        </button>
+  <div class="container">
+    <div class="comment-list">
+      <div v-for="comment in comments" :key="comment.id" class="comment">
+        <div class="comment-content">{{ comment.comment }}</div>
+        <div class="comment-actions" v-if="comment.status == 'pending'">
+          <button @click="approveComment(comment.id)" class="btn btn-success">
+            Approve
+          </button>
+          <button @click="denyComment(comment.id)" class="btn btn-danger">
+            Deny
+          </button>
+        </div>
       </div>
     </div>
   </div>

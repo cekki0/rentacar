@@ -18,6 +18,7 @@
     </div>
     <Comments :kurcina="this.facility.id"></Comments>
     <router-link
+      v-if="this.user.role == 'customer'"
       :to="`/comment/createComments/${this.facility.id}`"
       class="btn btn-primary"
     >
@@ -35,9 +36,20 @@ export default {
     return {
       facility: {},
       comments: [],
+      user: {},
     };
   },
   methods: {
+    async getUser() {
+      try {
+        const res = await this.axios.get("http://localhost:3000/user/profile/");
+        if (res.data.username) {
+          this.user = res.data;
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    },
     async fetchFacility(id) {
       try {
         const res = await this.axios.get(
@@ -64,10 +76,11 @@ export default {
     },
   },
 
-  mounted() {
+  async mounted() {
     const id = this.$route.params.id;
     this.fetchFacility(id);
     this.checkIfOpened();
+    await this.getUser();
   },
 
   components: {

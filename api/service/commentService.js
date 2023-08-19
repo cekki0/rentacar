@@ -14,15 +14,13 @@ function getAll() {
 }
 
 function getByFacilityId(facilityId) {
-  //komentari za odredjen id
   return commentsRepository
     .getAll()
     .filter((comment) => facilityId == comment.facilityId);
 }
 
 function setApprove(id) {
-  const comment = commentsRepository.getById(id); // nadje komentar sa tim id
-  console.log();
+  const comment = commentsRepository.getById(id);
   if (comment) {
     comment.status = "Approved";
     commentsRepository.update(comment);
@@ -31,9 +29,7 @@ function setApprove(id) {
 }
 
 function setDeny(id) {
-  // id komentara
-  const comment = commentsRepository.getById(id); // nadje komentar sa tim id
-  console.log();
+  const comment = commentsRepository.getById(id);
   if (comment) {
     comment.status = "Denied";
     commentsRepository.update(comment);
