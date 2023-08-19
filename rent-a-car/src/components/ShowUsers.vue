@@ -35,8 +35,12 @@
         <option value="type3">Type 3</option>
       </select>
     </div>
-    <div class="col">
-      <div v-for="user in filteredAndSortedUsers" :key="user.id">
+    <div class="row">
+      <div
+        v-for="user in filteredAndSortedUsers"
+        :key="user.id"
+        class="col-md-3 mb-3"
+      >
         <User :user="user" />
       </div>
     </div>

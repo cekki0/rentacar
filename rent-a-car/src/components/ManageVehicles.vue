@@ -127,8 +127,8 @@
         Add Vehicle
       </button>
     </form>
-    <div class="col">
-      <div v-for="vehicle in vehicles" :key="vehicle.id">
+    <div class="row">
+      <div v-for="vehicle in vehicles" :key="vehicle.id" class="col-md-3 mb-3">
         <Vehicle :vehicle="vehicle" />
       </div>
     </div>
