@@ -12,7 +12,9 @@
           Date of Birth: {{ user.dateOfBirth }}<br />
           Role: {{ user.role }}<br />
           Points: {{ user.points }}<br />
-          User Type: {{ user.userType }}
+          <template v-if="user.role === 'customer'">
+            User Type: {{ user.userType }}
+          </template>
         </p>
         <button class="btn btn-primary" @click="editProfile()">
           Edit Profile
@@ -22,7 +24,7 @@
         </button>
       </div>
     </div>
-    <CustomerOrderInfo v-if="this.user.role == 'customer'" />
+    <CustomerOrderInfo v-if="user.role === 'customer'" />
   </div>
 </template>
 

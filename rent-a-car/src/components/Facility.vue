@@ -18,24 +18,6 @@ export default {
       required: true,
     },
   },
-  methods: {
-    checkIfOpened() {
-      const currentTime = new Date();
-      const openTime = new Date(`2000-01-01T${this.facility.startTime}`);
-      const closedTime = new Date(`2000-01-01T${this.facility.endTime}`);
-      if (
-        currentTime.getHours() >= openTime.getHours() &&
-        currentTime.getHours() <= closedTime.getHours()
-      ) {
-        this.facility.openStatus = "Opened";
-      } else {
-        this.facility.openStatus = "Closed";
-      }
-    },
-  },
-  mounted() {
-    this.checkIfOpened();
-  },
 };
 </script>
 

@@ -9,6 +9,7 @@
         Gender: {{ user.gender }}<br />
         Date of Birth: {{ user.dateOfBirth }}<br />
         Role: {{ user.role }}<br />
+        Points: {{ user.points }}<br />
         User Type: {{ user.userType }}
       </p>
     </div>

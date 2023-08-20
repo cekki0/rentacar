@@ -30,9 +30,7 @@
       <label>Filter by user type:</label>
       <select v-model="filterByUserType">
         <option value="">All Types</option>
-        <option value="type1">Type 1</option>
-        <option value="type2">Type 2</option>
-        <option value="type3">Type 3</option>
+        <option value="default">Default</option>
       </select>
     </div>
     <div class="row">
@@ -85,12 +83,22 @@ export default {
       });
 
       return filteredUsers.sort((a, b) => {
-        const aValue = a[this.sortBy];
-        const bValue = b[this.sortBy];
-        if (this.sortOrder === "asc") {
-          return aValue.localeCompare(bValue);
+        if (this.sortBy === "points") {
+          const aValue = a.points;
+          const bValue = b.points;
+          if (this.sortOrder === "asc") {
+            return aValue - bValue;
+          } else {
+            return bValue - aValue;
+          }
         } else {
-          return bValue.localeCompare(aValue);
+          const aValue = a[this.sortBy];
+          const bValue = b[this.sortBy];
+          if (this.sortOrder === "asc") {
+            return aValue.localeCompare(bValue);
+          } else {
+            return bValue.localeCompare(aValue);
+          }
         }
       });
     },

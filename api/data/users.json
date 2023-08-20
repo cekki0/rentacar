@@ -7,7 +7,7 @@
     "gender": "male",
     "dateOfBirth": "2002-02-02",
     "role": "customer",
-    "points": 0,
+    "points": 100,
     "userType": "default",
     "id": 1,
     "facility": {}
@@ -20,7 +20,8 @@
     "gender": "male",
     "dateOfBirth": "2001-01-01",
     "role": "admin",
-    "id": 2
+    "id": 2,
+    "points": 0
   },
   {
     "username": "krle",
@@ -31,7 +32,8 @@
     "dateOfBirth": "2001-01-01",
     "role": "manager",
     "id": 3,
-    "facilityId": 1
+    "facilityId": 1,
+    "points": 0
   },
   {
     "username": "sima",
@@ -42,7 +44,8 @@
     "dateOfBirth": "2001-01-01",
     "role": "manager",
     "id": 4,
-    "facilityId": 2
+    "facilityId": 2,
+    "points": 0
   },
   {
     "username": "gagi",
@@ -53,8 +56,9 @@
     "dateOfBirth": "2002-02-02",
     "role": "customer",
     "userType": "default",
-    "points": 0,
+    "points": 50,
     "id": 5
+    
   },
   {
     "username": "jokara",
@@ -66,6 +70,7 @@
     "role": "manager",
     "id": 6,
     "facilityId": 3,
-    "facility": {}
+    "facility": {},
+    "points": 0
   }
 ]

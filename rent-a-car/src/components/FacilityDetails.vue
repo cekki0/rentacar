@@ -76,26 +76,11 @@ export default {
         console.error("Error fetching facility:", error);
       }
     },
-    checkIfOpened() {
-      const currentTime = new Date();
-      const openTime = new Date(`2000-01-01T${this.facility.startTime}`);
-      const closedTime = new Date(`2000-01-01T${this.facility.endTime}`);
-      console.log(this.facility.startTime);
-      if (
-        currentTime.getHours() >= openTime.getHours() &&
-        currentTime.getHours() <= closedTime.getHours()
-      ) {
-        this.facility.openStatus = "Opened";
-      } else {
-        this.facility.openStatus = "Closed";
-      }
-    },
   },
 
   async mounted() {
     const id = this.$route.params.id;
     this.fetchFacility(id);
-    this.checkIfOpened();
     await this.fetchOrders();
     await this.getUser();
     for (const order of this.orders) {
