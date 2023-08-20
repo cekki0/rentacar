@@ -195,7 +195,7 @@ export default {
           `http://localhost:3000/vehicle/create`,
           this.vehicle
         );
-        this.$router.push("/manageVehicles");
+        this.fetchFacility(this.user.facilityId);
       } catch (error) {
         console.error("Error adding vehicle:", error);
       }
