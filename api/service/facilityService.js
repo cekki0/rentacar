@@ -1,4 +1,5 @@
 const facilityRepository = require("../repository/facilityRepository");
+const commentRepository = require("../repository/commentRepository");
 
 function validate(data) {
   return true;
@@ -6,6 +7,7 @@ function validate(data) {
 
 function getAll() {
   const facilities = facilityRepository.getAll();
+  const comments = commentRepository.getAll();
   const currentTime = new Date();
   const currentHours = currentTime.getHours();
   const currentMinutes = currentTime.getMinutes();
@@ -13,7 +15,22 @@ function getAll() {
   const facilitiesWithOpenStatus = facilities.map((facility) => {
     const [openHours, openMinutes] = facility.startTime.split(":").map(Number);
     const [closeHours, closeMinutes] = facility.endTime.split(":").map(Number);
+    let rating=0;
+    let sumOfRatings = 0;
+    let counter =0;
     
+    for (const comment of comments) {
+      if(facility.id == comment.facilityId && comment.status=="Approved")
+      {
+        sumOfRatings+=comment.rating;
+        counter++;
+      }
+    }
+    if(sumOfRatings)
+    {
+      rating = sumOfRatings/counter
+    }
+
     let openStatus = "Closed";
 
     if (
@@ -23,7 +40,7 @@ function getAll() {
       openStatus = "Opened";
     }
 
-    return { ...facility, openStatus };
+    return { ...facility, openStatus,rating };
   });
 
   return facilitiesWithOpenStatus;
@@ -31,17 +48,29 @@ function getAll() {
 
 function getById(id) {
   const facility = facilityRepository.getById(id);
-  
-  if (!facility) {
-    return null;
-  }
-
+  const comments = commentRepository.getAll();
   const currentTime = new Date();
   const currentHours = currentTime.getHours();
   const currentMinutes = currentTime.getMinutes();
 
   const [openHours, openMinutes] = facility.startTime.split(":").map(Number);
   const [closeHours, closeMinutes] = facility.endTime.split(":").map(Number);
+
+  let rating=0;
+    let sumOfRatings = 0;
+    let counter =0;
+    
+    for (const comment of comments) {
+      if(facility.id == comment.facilityId && comment.status=="Approved")
+      {
+        sumOfRatings+=comment.rating;
+        counter++;
+      }
+    }
+    if(sumOfRatings)
+    {
+      rating = sumOfRatings/counter
+    }
 
   let openStatus = "Closed";
 
@@ -52,7 +81,7 @@ function getById(id) {
     openStatus = "Opened";
   }
 
-  return { ...facility, openStatus };
+  return { ...facility, openStatus,rating };
 }
 
 

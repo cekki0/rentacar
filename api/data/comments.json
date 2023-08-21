@@ -1,7 +1,1 @@
-[
-  { "comment": "ok", "id": 1, "facilityId": 1, "status": "Approved" },
-  { "comment": "asdasd", "facilityId": 2, "status": "Approved", "id": 2 },
-  { "comment": "asdasdasd", "facilityId": "2", "status": "Approved", "id": 3 },
-  { "comment": "ok", "facilityId": "2", "status": "Denied", "id": 4 },
-  { "comment": "dobar", "facilityId": "1", "status": "Approved", "id": 5 }
-]
+[{"comment":"fullagang","rating":10,"facilityId":"1","userId":1,"status":"Approved","id":1},{"comment":"onako","rating":4,"facilityId":"1","userId":1,"status":"Approved","id":2},{"comment":"okej","rating":5,"facilityId":"1","userId":1,"status":"Approved","id":3},{"comment":"ekstra","rating":10,"facilityId":"1","userId":1,"status":"Approved","id":4},{"comment":"onako","rating":5,"facilityId":"2","userId":5,"status":"Approved","id":5},{"comment":"sta znam","rating":7,"facilityId":"2","userId":5,"status":"Approved","id":6}]

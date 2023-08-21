@@ -6,7 +6,7 @@ const middleware = require("./middleware");
 const commentRouter = express.Router();
 
 commentRouter.post("/create", (req, res) => {
-  if (commentService.createComments(req.body.comment, req.body.facilityId)) {
+  if (commentService.createComments(req.body)){
     res.sendStatus(200);
     return;
   }

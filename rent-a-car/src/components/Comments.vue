@@ -2,16 +2,23 @@
   <div class="container mt-4">
     <h2 class="mb-4">Comments</h2>
     <ul class="list-group">
-      <li v-for="comment in comments" :key="comment.id" class="list-group-item">
-        {{ comment.comment }}
-      </li>
+      <Comment
+        v-for="comment in comments"
+        :key="comment.id"
+        :comment="comment"
+      ></Comment>
     </ul>
   </div>
 </template>
 
 <script>
+import Comment from './Comment.vue';
+
 export default {
   props: ["kurcina"],
+  components: {
+    Comment
+  },
   data() {
     return {
       comments: [],

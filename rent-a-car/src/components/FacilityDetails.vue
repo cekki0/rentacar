@@ -28,7 +28,7 @@
       :to="`/comment/createComments/${this.facility.id}`"
       class="btn btn-primary"
     >
-      Dodaj komentar
+      Add comment
     </router-link>
   </div>
 </template>

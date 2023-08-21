@@ -45,6 +45,16 @@ userRouter.get("/profile/", middleware.isAuthenticated, (req, res) => {
   }
 });
 
+userRouter.get("/:id", (req, res) => {
+  const id = req.params.id;
+  const user = userService.getById(id);
+  if (user) {
+    res.status(200).json(user);
+  } else {
+    res.status(404).json({ message: "User not found" });
+  }
+});
+
 userRouter.get("/users", (req, res) => {
   const users = userService.getAll();
   if (users) {

@@ -1,10 +1,13 @@
 const commentsRepository = require("../repository/commentRepository");
 
-function createComments(data, facilityId) {
-  const Comment = {};
-  Comment.comment = data;
-  Comment.facilityId = facilityId;
-  Comment.status = "pending";
+function createComments(data) {
+  const Comment = {
+    comment: data.comment,
+    rating: Number(data.rating),
+    facilityId: data.facilityId,
+    userId:data.userId,
+    status: "pending"
+  };
   commentsRepository.save(Comment);
   return true;
 }

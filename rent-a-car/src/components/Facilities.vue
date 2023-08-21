@@ -153,7 +153,7 @@ export default {
               .includes(this.filterFuelType.toLowerCase())
           );
           const openedFacilitiesMatch =
-            !this.filterOpenedFacilities || facility.openStatus === "opened";
+            !this.filterOpenedFacilities || facility.openStatus === "Opened";
 
           return vehicleTypeMatches && fuelTypeMatches && openedFacilitiesMatch;
         });

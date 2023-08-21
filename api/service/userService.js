@@ -41,6 +41,10 @@ function getAll() {
   return userRepository.getAll();
 }
 
+function getById(id) {
+  return userRepository.getById(id);
+}
+
 function getByUsername(username) {
   return userRepository.getByUsername(username);
 }
@@ -118,4 +122,5 @@ module.exports = {
   getAllManagers,
   getAll,
   setManagerFacility,
+  getById
 };
