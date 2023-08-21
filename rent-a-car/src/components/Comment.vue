@@ -32,7 +32,7 @@ export default {
     async fetchUser() {
       try {
         const res = await this.axios.get(
-          `http://localhost:3000/user/${this.comment.userId}`
+          `http://localhost:3000/user/user/${this.comment.userId}`
         );
         this.user = res.data;
       } catch (error) {

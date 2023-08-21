@@ -45,7 +45,7 @@ userRouter.get("/profile/", middleware.isAuthenticated, (req, res) => {
   }
 });
 
-userRouter.get("/:id", (req, res) => {
+userRouter.get("/user/:id", (req, res) => {
   const id = req.params.id;
   const user = userService.getById(id);
   if (user) {
