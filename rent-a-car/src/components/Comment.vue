@@ -36,7 +36,7 @@ export default {
         );
         this.user = res.data;
       } catch (error) {
-        console.error("Error fetching facility:", error);
+        console.error("Error fetching user:", error);
       }
     },
   },

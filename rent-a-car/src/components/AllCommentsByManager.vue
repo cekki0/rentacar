@@ -1,8 +1,9 @@
 <template>
   <div class="container">
+    <h2>Comments</h2>
     <div class="comment-list">
       <div v-for="comment in comments" :key="comment.id" class="comment">
-        <div class="comment-content"><Comment :comment="comment"/></div>
+        <div class="comment-content"><Comment :comment="comment" /></div>
         <div class="comment-actions" v-if="comment.status == 'pending'">
           <button @click="approveComment(comment.id)" class="btn btn-success">
             Approve
@@ -18,7 +19,7 @@
 
 <script>
 import { resolveDirective } from "vue";
-import Comment from "../components/Comment.vue"
+import Comment from "../components/Comment.vue";
 export default {
   data() {
     return {
@@ -67,9 +68,9 @@ export default {
   mounted() {
     this.fetchComments();
   },
-  components:{
-    Comment
-  }
+  components: {
+    Comment,
+  },
 };
 </script>
 

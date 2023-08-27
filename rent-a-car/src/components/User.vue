@@ -9,8 +9,12 @@
         Gender: {{ user.gender }}<br />
         Date of Birth: {{ user.dateOfBirth }}<br />
         Role: {{ user.role }}<br />
-        Points: {{ user.points }}<br />
-        User Type: {{ user.userType }}
+        <template v-if="user.role === 'customer'">
+          Points: {{ user.points }}<br />
+        </template>
+        <template v-if="user.role === 'customer'">
+          User Type: {{ user.userType }}
+        </template>
       </p>
     </div>
   </div>

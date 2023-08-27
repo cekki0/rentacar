@@ -4,6 +4,16 @@ const middleware = require("./middleware");
 
 const vehicleRouter = express.Router();
 
+vehicleRouter.get("/vehicle/:id", (req, res) => {
+  const id = req.params.id;
+  const vehicle = vehicleService.getById(id);
+  if (vehicle) {
+    res.status(200).json(vehicle);
+  } else {
+    res.status(404).json({ message: "Vehicle not found" });
+  }
+});
+
 vehicleRouter.get("/vehicles", (req, res) => {
   const vehicles = vehicleService.getAll();
   if (vehicles) {

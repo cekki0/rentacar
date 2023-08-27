@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-4">
+  <div class="container">
     <h2>Add Vehicle</h2>
     <form @submit.prevent="addVehicle">
       <div class="row">
@@ -36,13 +36,12 @@
           </div>
           <div class="mb-3">
             <label for="vehicleType" class="form-label">Vehicle Type:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="vehicleType"
-              v-model="vehicle.vehicleType"
-              required
-            />
+            <select class="form-select" v-model="vehicle.vehicleType" required>
+              <option value="Sedan">Sedan</option>
+              <option value="SUV">SUV</option>
+              <option value="Truck">Truck</option>
+              <option value="Electric">Electric</option>
+            </select>
           </div>
           <div class="mb-3">
             <label for="gearShift" class="form-label">Gear Shift:</label>
@@ -66,6 +65,8 @@
             >
               <option value="diesel">Diesel</option>
               <option value="gasoline">Gasoline</option>
+              <option value="hybrid">Hybrid</option>
+              <option value="gas">Gas</option>
             </select>
           </div>
           <div class="mb-3">

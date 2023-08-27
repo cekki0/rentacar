@@ -1,6 +1,6 @@
 <template>
-  <div class="container mt-4">
-    <h2>Register Facility</h2>
+  <div class="container">
+    <h2>Create Facility</h2>
     <form @submit.prevent="createFacility">
       <div class="mb-3">
         <label for="name" class="form-label">Name:</label>
@@ -86,8 +86,8 @@ export default {
       facility: {
         name: "",
         location: "",
-        startTime: "",
-        endTime: "",
+        startTime: "10:00",
+        endTime: "22:00",
         logo: "",
       },
       managers: {},
@@ -100,7 +100,7 @@ export default {
     },
     async createFacility() {
       if (!this.selectedManager) {
-        alert("Izaberite menadžera pre nego što nastavite.");
+        alert("You need to select manager!.");
         return;
       }
       try {

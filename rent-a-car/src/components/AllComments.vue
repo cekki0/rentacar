@@ -1,15 +1,16 @@
 <template>
   <div class="container">
+    <h2>All Comments</h2>
     <div class="comment-list">
       <div v-for="comment in comments" :key="comment.id" class="comment">
-        <div class="comment-content"><Comment :comment="comment"/></div>
+        <div class="comment-content"><Comment :comment="comment" /></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Comment from "../components/Comment.vue"
+import Comment from "../components/Comment.vue";
 export default {
   data() {
     return {
@@ -32,9 +33,9 @@ export default {
   mounted() {
     this.fetchComments();
   },
-  components:{
-    Comment
-  }
+  components: {
+    Comment,
+  },
 };
 </script>
 

@@ -35,8 +35,8 @@
               id="Gender"
               v-model="editedUser.gender"
             >
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
             </select>
             <div class="text-danger" v-if="!editedUser.gender.trim()">
               Gender is required.
@@ -107,6 +107,16 @@ export default {
       const monthsDiff = currentDate.getMonth() - birthDate.getMonth();
       return yearsDiff > 18 || (yearsDiff === 18 && monthsDiff >= 0);
     },
+  },
+  async mounted() {
+    await this.axios
+      .get(`http://localhost:3000/user/profile/`)
+      .then((response) => {
+        this.editedUser = response.data;
+      })
+      .catch((error) => {
+        console.error("Error fetching user profile:", error);
+      });
   },
 };
 </script>

@@ -17,6 +17,23 @@
     "id": 1
   },
   {
+    "brand": "Automobil",
+    "model": "Na 3 tocka",
+    "price": 200,
+    "vehicleType": "Sedan",
+    "fuelType": "gasoline",
+    "consumption": 5,
+    "gearShift": "manual",
+    "numDoors": 5,
+    "numMaxPeople": 5,
+    "description": "Amazing car",
+    "picture": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/msnbc/Components/Photos/070604/070604_smartCar_hmed10a.jpg",
+    "rentStatus": "available",
+    "facilityId": 1,
+    "deleted": false,
+    "id": 2
+  },
+  {
     "brand": "Skoda",
     "model": "Superb",
     "price": 300,
@@ -48,6 +65,6 @@
     "rentStatus": "available",
     "facilityId": 3,
     "deleted": false,
-    "id": 3
+    "id": 4
   }
 ]

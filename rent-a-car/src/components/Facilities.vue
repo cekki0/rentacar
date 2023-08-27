@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h2>Facilities</h2>
     <div class="row">
       <!-- Search Options -->
       <div class="col-md-6 mb-3">
@@ -32,19 +33,30 @@
       </div>
       <div class="col-md-6 mb-3">
         <label class="form-label">Filter by Vehicle Type</label>
-        <input type="text" class="form-control" v-model="filterVehicleType" />
+        <select class="form-select" v-model="filterVehicleType">
+          <option value="">All Types</option>
+          <option value="Sedan">Sedan</option>
+          <option value="SUV">SUV</option>
+          <option value="Truck">Truck</option>
+          <option value="Electric">Electric</option>
+        </select>
       </div>
+
       <div class="col-md-6 mb-3">
         <label class="form-label">Filter by Fuel Type</label>
-        <input type="text" class="form-control" v-model="filterFuelType" />
+        <select class="form-select" v-model="filterFuelType">
+          <option value="diesel">Diesel</option>
+          <option value="gasoline">Gasoline</option>
+          <option value="hybrid">Hybrid</option>
+          <option value="gas">Gas</option>
+        </select>
       </div>
       <div class="col-md-6 mb-3">
-        <label class="form-check-label">Filter by Opened Facilities</label>
-        <input
-          type="checkbox"
-          class="form-check-input"
-          v-model="filterOpenedFacilities"
-        />
+        <label class="form-label">Filter by Facility Status</label>
+        <select class="form-select" v-model="filterOpenedFacilities">
+          <option value="Opened">Opened</option>
+          <option value="Closed">Closed</option>
+        </select>
       </div>
     </div>
     <!-- Facility Listings -->
@@ -73,8 +85,8 @@ export default {
       searchRating: null,
       sortOption: "",
       filterVehicleType: "",
-      filterFuelType: "",
-      filterOpenedFacilities: false,
+      filterFuelType: "diesel",
+      filterOpenedFacilities: "",
     };
   },
   components: {
@@ -147,13 +159,19 @@ export default {
               .toLowerCase()
               .includes(this.filterVehicleType.toLowerCase())
           );
-          const fuelTypeMatches = facility.vehicles.some((vehicle) =>
-            vehicle.fuelType
-              .toLowerCase()
-              .includes(this.filterFuelType.toLowerCase())
-          );
+          const fuelTypeMatches = facility.vehicles.some((vehicle) => {
+            const vehicleFuelType = vehicle.fuelType.toLowerCase();
+            const filterFuelType = this.filterFuelType.toLowerCase();
+
+            return vehicleFuelType === filterFuelType;
+          });
+
           const openedFacilitiesMatch =
-            !this.filterOpenedFacilities || facility.openStatus === "Opened";
+            this.filterOpenedFacilities === "" ||
+            (this.filterOpenedFacilities === "Opened" &&
+              facility.openStatus === "Opened") ||
+            (this.filterOpenedFacilities === "Closed" &&
+              facility.openStatus === "Closed");
 
           return vehicleTypeMatches && fuelTypeMatches && openedFacilitiesMatch;
         });

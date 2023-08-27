@@ -21,7 +21,8 @@
     "dateOfBirth": "2001-01-01",
     "role": "admin",
     "id": 2,
-    "points": 0
+    "points": 0,
+    "facility": {}
   },
   {
     "username": "krle",
@@ -58,7 +59,6 @@
     "userType": "default",
     "points": 50,
     "id": 5
-    
   },
   {
     "username": "jokara",
@@ -72,5 +72,17 @@
     "facilityId": 3,
     "facility": {},
     "points": 0
+  },
+  {
+    "username": "korisnik",
+    "password": "korisnik",
+    "firstName": "korisnik",
+    "lastName": "korisnik",
+    "gender": "male",
+    "dateOfBirth": "2002-02-02",
+    "role": "customer",
+    "userType": "default",
+    "points": 0,
+    "id": 7
   }
 ]

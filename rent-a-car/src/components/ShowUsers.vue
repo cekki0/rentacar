@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h2>All Users</h2>
     <div class="search-bar">
       <label>Search by:</label>
       <input v-model="searchQuery.firstName" placeholder="First Name" />
@@ -27,6 +28,8 @@
         <option value="manager">Manager</option>
         <option value="admin">Admin</option>
       </select>
+    </div>
+    <div class="filter-bar">
       <label>Filter by user type:</label>
       <select v-model="filterByUserType">
         <option value="">All Types</option>
@@ -71,11 +74,17 @@ export default {
       let filteredUsers = this.users.filter((user) => {
         return (
           (this.searchQuery.firstName === "" ||
-            user.firstName.includes(this.searchQuery.firstName)) &&
+            user.firstName
+              .toLowerCase()
+              .includes(this.searchQuery.firstName.toLowerCase())) &&
           (this.searchQuery.lastName === "" ||
-            user.lastName.includes(this.searchQuery.lastName)) &&
+            user.lastName
+              .toLowerCase()
+              .includes(this.searchQuery.lastName.toLowerCase())) &&
           (this.searchQuery.username === "" ||
-            user.username.includes(this.searchQuery.username)) &&
+            user.username
+              .toLowerCase()
+              .includes(this.searchQuery.username.toLowerCase())) &&
           (this.filterByRole === "" || user.role === this.filterByRole) &&
           (this.filterByUserType === "" ||
             user.userType === this.filterByUserType)
@@ -95,9 +104,13 @@ export default {
           const aValue = a[this.sortBy];
           const bValue = b[this.sortBy];
           if (this.sortOrder === "asc") {
-            return aValue.localeCompare(bValue);
+            return aValue.localeCompare(bValue, undefined, {
+              sensitivity: "base",
+            });
           } else {
-            return bValue.localeCompare(aValue);
+            return bValue.localeCompare(aValue, undefined, {
+              sensitivity: "base",
+            });
           }
         }
       });

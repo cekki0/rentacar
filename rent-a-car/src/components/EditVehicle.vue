@@ -34,13 +34,16 @@
       </div>
       <div class="mb-3">
         <label for="vehicleType" class="form-label">Vehicle Type:</label>
-        <input
-          type="text"
-          class="form-control"
-          id="vehicleType"
+        <select
+          class="form-select"
           v-model="editedVehicle.vehicleType"
           required
-        />
+        >
+          <option value="Sedan">Sedan</option>
+          <option value="SUV">SUV</option>
+          <option value="Truck">Truck</option>
+          <option value="Electric">Electric</option>
+        </select>
       </div>
       <div class="mb-3">
         <label for="gearShift" class="form-label">Gear Shift:</label>
@@ -64,6 +67,8 @@
         >
           <option value="diesel">Diesel</option>
           <option value="gasoline">Gasoline</option>
+          <option value="hybrid">Hybrid</option>
+          <option value="gas">Gas</option>
         </select>
       </div>
       <div class="mb-3">
@@ -157,6 +162,17 @@ export default {
         console.error("Error editing vehicle:", error);
       }
     },
+  },
+  async mounted() {
+    try {
+      const res = await this.axios.get(
+        `http://localhost:3000/vehicle/vehicle/${this.$route.params.id}`
+      );
+      this.editedVehicle = res.data;
+    } catch (error) {
+      alert("Error fetching vehicle");
+      console.error("Error editing vehicle:", error);
+    }
   },
 };
 </script>
